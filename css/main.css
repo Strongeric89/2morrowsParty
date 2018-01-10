@@ -11,6 +11,44 @@
   padding-bottom: 3%;
 }
 
+#videoBlock{
+  margin-bottom: 10%;
+}
+
 .footer{
   text-align: center;
+  margin-top: 5%;
+    margin-bottom: 5%;
+    padding:2%;
+
+}
+
+#mainTxtTop{
+  font-size: 36px;
+  font-family: 'Lobster', 'cursive' !important;
+
+}
+
+.jumbotron{
+
+
+
+
+
+}
+
+
+.jumbotron {
+   background-image: url(../images/2mp.png);
+  height:500px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.jumbotron .cont {
+
+  color:red;
+  position:relative;
+  top:250px;
 }

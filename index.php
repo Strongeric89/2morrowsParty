@@ -26,6 +26,34 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="js/myscripts.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+    <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+
+      }
+      .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+
+  }
+
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
   </head>
 
   <body>
@@ -45,47 +73,118 @@
             </li>
           </ul>
         </nav>
-        <h3 class="text-muted">2morrow's Party - Wedding Band</h3>
+        <h3 class="text-muted" id="mainTxtTop">2morrow's Party - Wedding Band</h3>
           <hr>
       </header>
 
 
       <main role="main">
 
+
+
         <div class="jumbotron">
-          <h1 class="display-3">Sale Now On!</h1>
-          <p class="lead">Free DJ with every booking, when booked this month</p>
-          <p><a class="btn btn-lg btn-success" href="#" role="button">Enquire Now</a></p>
-        </div>
+          <div class="cont">
+            <h1 class="display-3">Sale Now On!</h1>
+            <p class="lead">Free DJ with every booking, when booked this month</p>
+            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
+
+          </div>
+          </div>
+
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+
+          <!-- carousel-inner -->
+
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+              <div class="item active">
+                <img src="images/sp3.jpg" alt="Chania" width="460" height="345">
+                <div class="carousel-caption">
+                  <h3>Weddings</h3>
+                  <p>We Cater for all genres</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <img src="images/sp1.jpg" alt="Chania" width="460" height="345">
+                <div class="carousel-caption">
+                  <h3>Parties</h3>
+                  <p>We supply a full rig, dj, lighting etc..</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <img src="images/sp2.jpg" alt="Flower" width="460" height="345">
+                <div class="carousel-caption">
+                  <h3>You Special Occassion</h3>
+                  <p>We will fill the dance floor Guaranteed!</p>
+                </div>
+              </div>
+
+              <div class="item">
+                <img src="images/sp8.jpg" alt="Flower" width="460" height="345">
+                <div class="carousel-caption">
+                  <h3>other stuff</h3>
+                  <p>blah blah</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <br>
+
 
         <div class="row marketing">
+          <div class="col-lg-6" id="videoBlock">
+            <h4>Promo Video</h4>
+            <p>Check out our Promo Video. You will not be disapointed</p>
+            <iframe width="100%" height="50%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            <h4>another cool video</h4>
+            <p>college gigs and shit</p>
+            <iframe width="100%" height="50%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </div>
+
           <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+            <h4>Testamonials</h4>
+            <p>sample testamonial, pull from db. randomize each time</p>
 
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            <h4>Gallery</h4>
+            <p>Show some cool pics. pull from db</p>
 
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-          </div>
-
-          <div class="col-lg-6">
-            <h4>Subheading</h4>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-            <h4>Subheading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-            <h4>Subheading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-          </div>
+            </div>
         </div>
 
       </main>
 
       <footer class="footer">
-        <hr>
         <p>&copy; 2morrows Party 2017 | by eric strong</p>
       </footer>
 
