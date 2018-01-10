@@ -91,6 +91,25 @@
           </div>
           </div>
 
+          <div class="bio">
+            Sick of the same cheesy bands? 2morrow's party are a fresh and funky wedding party band covering all genre's from A-Z . We'd love you to take 5 mins and look at our promo video and live wedding footage and let the dance floor do the talking.
+
+            <br><br>
+
+            2morrow's Party are a 5 piece, high energy and fun band who have played in venues such as the Aviva stadium, celebrated along side the Dublin GAA team to bring home Sam Maguire and even played corporate events for companies such as Ryanair and Coca-Cola.
+<br><br>
+            2MP cover all bases to get party started and ensure you have an amazing night.
+
+            Don't forget to check out our Wedding promo ; )
+
+
+
+            2morrows Party is a Wedding Band from Louth servicing weddings throughout the local area including all counties Nationwide .
+
+            2morrows Party is a professional Wedding Band that has been part of the Wedding Bands industry for seven years specialising in 80s, 90s, Dance, Pop, Country, Rock, Hip Hop, Funk and Current music for weddings and corporate events. .</p>
+
+          </div>
+
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -114,7 +133,7 @@
             <div class="carousel-inner" role="listbox">
 
               <div class="item active">
-                <img src="images/sp3.jpg" alt="Chania" width="460" height="345">
+                <img src="images/sp24.png" alt="2mp" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>Weddings</h3>
                   <p>We Cater for all genres</p>
@@ -122,7 +141,7 @@
               </div>
 
               <div class="item">
-                <img src="images/sp1.jpg" alt="Chania" width="460" height="345">
+                <img src="images/sp25.png" alt="2mp" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>Parties</h3>
                   <p>We supply a full rig, dj, lighting etc..</p>
@@ -130,7 +149,7 @@
               </div>
 
               <div class="item">
-                <img src="images/sp2.jpg" alt="Flower" width="460" height="345">
+                <img src="images/sp1.png" alt="2mp" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>You Special Occassion</h3>
                   <p>We will fill the dance floor Guaranteed!</p>
@@ -138,7 +157,7 @@
               </div>
 
               <div class="item">
-                <img src="images/sp8.jpg" alt="Flower" width="460" height="345">
+                <img src="images/sp20.jpg" alt="2mp" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>other stuff</h3>
                   <p>blah blah</p>
@@ -176,8 +195,8 @@
             <h4>Testamonials</h4>
             <p>sample testamonial, pull from db. randomize each time</p>
 
-            <h4>Gallery</h4>
-            <p>Show some cool pics. pull from db</p>
+            <h4>About</h4>
+            <p>2morrows Party
 
             </div>
         </div>
@@ -185,7 +204,7 @@
       </main>
 
       <footer class="footer">
-        <p>&copy; 2morrows Party 2017 | by eric strong</p>
+        <p>&copy; 2morrow's Party 2017 | by eric strong</p>
       </footer>
 
     </div> <!-- /container -->

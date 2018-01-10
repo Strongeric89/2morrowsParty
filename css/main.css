@@ -17,7 +17,7 @@
 
 .footer{
   text-align: center;
-  margin-top: 5%;
+  margin-top: 10%;
     margin-bottom: 5%;
     padding:2%;
 
@@ -29,12 +29,11 @@
 
 }
 
-.jumbotron{
-
-
-
-
-
+.bio{
+  text-align: justify;
+  font-size: 20px;
+  font-style: italic;
+  padding: 5%;
 }
 
 
