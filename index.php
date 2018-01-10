@@ -294,7 +294,7 @@ include 'db/database.php';
 
               <div class="card" style="width: 100%;">
         <div class="card-header">
-          Review by: '.$customer.'
+        <i class="fa fa-smile-o" aria-hidden="true"></i>   Review by: '.$customer.'
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">'.$date.'</li>
