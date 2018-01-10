@@ -23,6 +23,7 @@ include 'db/database.php';
  <link href="css/bootstrap.min.css" rel="stylesheet">
  <!--jquery-->
  <script src="js/jquery.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
@@ -92,6 +93,33 @@ include 'db/database.php';
 
           </div>
           </div>
+
+
+          <section class="row text-center placeholders">
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp17.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Weddings</h4>
+              <div class="text-muted">we do deadly weddings</div>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp15.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Events</h4>
+              <span class="text-muted">Madness</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp12.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Pubs and Clubs</h4>
+              <span class="text-muted">we have a mad set list</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp10.png" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Special Occassions</h4>
+              <span class="text-muted">eric is class at web dev</span>
+            </div>
+          </section>
+
+
+
 
           <div class="bio">
             Sick of the same cheesy bands? 2morrow's party are a fresh and funky wedding party band covering all genre's from A-Z . We'd love you to take 5 mins and look at our promo video and live wedding footage and let the dance floor do the talking.
@@ -180,18 +208,72 @@ include 'db/database.php';
           </div>
           <br>
 
+          <div class="row marketing">
+
+            <div class="col-lg-6">
+              <h4>Upcomming Shows</h4>
+
+
+
+        <?php
+            //the following is to produce a upcomming shows on the index page
+            $query1 = "SELECT * FROM shows; ";
+            $run = $mysqli->query($query1);
+            while ($row = $run->fetch_array()) {
+
+                $location= $row['location'];
+                $date = $row['date'];
+                $time= $row['time'];
+
+                echo '
+
+                <div class="card" style="width: 100%;">
+          <div class="card-header">
+            <i class="fa fa-calendar" aria-hidden="true"></i> Date: '.$date.'
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Where: '.$location.'</li>
+            <li class="list-group-item">When: '.$date.' Time: '.$time.':00</li>
+          </ul>
+        </div>
+        <br>
+              ';
+            }
+
+         ?>
+
+              </div>
+
+            <div class="col-lg-6" id="videoBlock">
+              <h4>Get in Touch</h4>
+
+
+              <div class="card" style="width: 100%;">
+  <img class="card-img-top" src="images/sp5.jpg" alt="image">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i> Email: 2morrowsparty@gmail.com </i></a></h5>
+    <hr>
+
+  <h5 class="card-title"><i class="fa fa-phone" aria-hidden="true">  Phone: 085000000</i></h5>
+<hr>
+
+<h5 class="card-title">        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+ Facebook</h5>
+<hr>
+  </div>
+</div>
+
+              </div>
+
+
+          </div>
+
+          <hr>
+
+
+
 
         <div class="row marketing">
-          <div class="col-lg-6" id="videoBlock">
-            <h4>Promo Video</h4>
-            <p>Check out our Promo Video. You will not be disapointed</p>
-            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-            <h4>another cool video</h4>
-            <p>college gigs and shit</p>
-            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-            </div>
 
           <div class="col-lg-6">
             <h4>Testamonials</h4>
@@ -224,15 +306,40 @@ include 'db/database.php';
             ';
           }
 
+
+
        ?>
 
+       <a href="#">for more click here</a>
+
             </div>
+
+          <div class="col-lg-6" id="videoBlock">
+            <h4>Promo Video</h4>
+            <p>Check out our Promo Video. You will not be disapointed</p>
+            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            <h4>another cool video</h4>
+            <p>college gigs and shit</p>
+            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </div>
+
+
         </div>
+
+
 
       </main>
 
       <footer class="footer">
-        <p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
+  <p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
+        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
+          <a href="#"><i class="fa fa-snapchat"></i></a>
+
+
+
       </footer>
 
     </div> <!-- /container -->
