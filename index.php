@@ -71,6 +71,10 @@ include 'db/database.php';
             <li class="nav-item">
               <a class="nav-link" href="#">Testamonials</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Setlist</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>

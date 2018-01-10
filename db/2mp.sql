@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2018 at 12:29 PM
+-- Generation Time: Jan 10, 2018 at 01:25 PM
 -- Server version: 5.7.18
 -- PHP Version: 5.6.30
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `2mp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shows`
+--
+
+CREATE TABLE `shows` (
+  `id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `shows`
+--
+
+INSERT INTO `shows` (`id`, `date`, `location`, `time`) VALUES
+(1, '2018-01-27', 'Tolka Pub', 10);
 
 -- --------------------------------------------------------
 
@@ -49,6 +69,12 @@ INSERT INTO `testamonials` (`id`, `message`, `customer`, `date`) VALUES
 --
 
 --
+-- Indexes for table `shows`
+--
+ALTER TABLE `shows`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `testamonials`
 --
 ALTER TABLE `testamonials`
@@ -58,6 +84,11 @@ ALTER TABLE `testamonials`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `shows`
+--
+ALTER TABLE `shows`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `testamonials`
 --
