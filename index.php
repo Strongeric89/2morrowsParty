@@ -1,5 +1,7 @@
 <?php
 
+include 'db/database.php';
+
 ?>
 
 <!doctype html>
@@ -183,20 +185,46 @@
           <div class="col-lg-6" id="videoBlock">
             <h4>Promo Video</h4>
             <p>Check out our Promo Video. You will not be disapointed</p>
-            <iframe width="100%" height="50%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             <h4>another cool video</h4>
             <p>college gigs and shit</p>
-            <iframe width="100%" height="50%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </div>
 
           <div class="col-lg-6">
             <h4>Testamonials</h4>
-            <p>sample testamonial, pull from db. randomize each time</p>
 
-            <h4>About</h4>
-            <p>2morrows Party
+
+
+      <?php
+          //the following is to produce a testamonial on the index page
+          $query1 = "SELECT customer, message, date FROM testamonials; ";
+          $run = $mysqli->query($query1);
+          while ($row = $run->fetch_array()) {
+
+              $message = $row['message'];
+              $customer = $row['customer'];
+              $date = $row['date'];
+
+              echo '
+
+              <div class="card" style="width: 100%;">
+        <div class="card-header">
+          Review by: '.$customer.'
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">'.$date.'</li>
+          <li class="list-group-item">'.$message.'</li>
+
+        </ul>
+      </div>
+      <br>
+            ';
+          }
+
+       ?>
 
             </div>
         </div>
@@ -204,7 +232,7 @@
       </main>
 
       <footer class="footer">
-        <p>&copy; 2morrow's Party 2017 | by eric strong</p>
+        <p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
       </footer>
 
     </div> <!-- /container -->
