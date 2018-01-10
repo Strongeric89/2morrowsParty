@@ -69,14 +69,14 @@ include 'db/database.php';
               <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Testamonials</a>
+              <a class="nav-link" href="testamonials.php">Testamonials</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Setlist</a>
+              <a class="nav-link" href="setlist.php">Setlist</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
           </ul>
         </nav>
@@ -286,7 +286,7 @@ include 'db/database.php';
 
       <?php
           //the following is to produce a testamonial on the index page
-          $query1 = "SELECT customer, message, date FROM testamonials; ";
+          $query1 = "SELECT customer, message, date FROM testamonials where id < 4 ORDER BY date desc; ";
           $run = $mysqli->query($query1);
           while ($row = $run->fetch_array()) {
 
@@ -314,7 +314,7 @@ include 'db/database.php';
 
        ?>
 
-       <a href="#">for more click here</a>
+       <a href="testamonials.php">for more click here</a>
 
             </div>
 

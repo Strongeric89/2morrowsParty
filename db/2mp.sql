@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2018 at 01:25 PM
+-- Generation Time: Jan 10, 2018 at 02:32 PM
 -- Server version: 5.7.18
 -- PHP Version: 5.6.30
 
@@ -52,7 +52,7 @@ CREATE TABLE `testamonials` (
   `id` int(11) NOT NULL,
   `message` varchar(255) NOT NULL,
   `customer` varchar(50) NOT NULL,
-  `date` varchar(50) NOT NULL
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -60,9 +60,9 @@ CREATE TABLE `testamonials` (
 --
 
 INSERT INTO `testamonials` (`id`, `message`, `customer`, `date`) VALUES
-(1, 'Without question made our wedding day even better, ter quality and professional was 2nd to none, if you want everyone on d dance floor then 2morrow party are the band for you.', ' Graham and Jane', '26th Aug 2017'),
-(2, 'We can\'t thank 2morrow\'s party enough for their fantastic service. They played a huge range of songs which had the dance floor full for the night. Greg is extremely professional and easy to deal with. I would highly recommend this band to any couple', 'Barbara', '29th Jul 2017'),
-(3, 'Amazing band and great 90s mashup at the end. Highly recomend', 'Ger', '2nd Jun 2017');
+(1, 'Without question made our wedding day even better, ter quality and professional was 2nd to none, if you want everyone on d dance floor then 2morrow party are the band for you.', ' Graham and Jane', '2017-08-26'),
+(2, 'We can\'t thank 2morrow\'s party enough for their fantastic service. They played a huge range of songs which had the dance floor full for the night. Greg is extremely professional and easy to deal with. I would highly recommend this band to any couple', 'Barbara', '2017-07-29'),
+(3, 'Amazing band and great 90s mashup at the end. Highly recomend', 'Ger', '2017-06-02');
 
 --
 -- Indexes for dumped tables
