@@ -14,6 +14,8 @@ include 'db/database.php';
 
 
     <title>2morrows Party - Wedding Band </title>
+    <link rel="icon" href="images/favicon.png" type="image/png"
+    	sizes="16x16">
 
 
 
@@ -68,6 +70,9 @@ include 'db/database.php';
 
       <header class="header clearfix" id="whiteBlock">
         <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
+
+
+
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
@@ -88,7 +93,11 @@ include 'db/database.php';
         </nav>
 
 
+
       </header>
+
+
+
 
 
 
@@ -96,9 +105,43 @@ include 'db/database.php';
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
-            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
+            <p><a class="btn btn-primary" href="contact.php" role="button">Enquire Now</a></p>
 
           </div>
+          </div>
+
+          <div class="bio" id="whiteBlock">
+
+            <i class="fa fa-calendar-o" aria-hidden="true"></i><h1>Our Next Showcase</h1>
+            <?php
+            $query1 = "SELECT * FROM shows ORDER BY date LIMIT 1 ; ";
+            $run = $mysqli->query($query1);
+            while ($row = $run->fetch_array()) {
+
+                $location= $row['location'];
+                $date = $row['date'];
+                $time= $row['time'];
+
+                echo '
+
+                <div class="card" style="width: 100%;">
+          <div class="card-header ">
+            <i class="fa fa-calendar" aria-hidden="true"></i> Date: '.$date.'
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Where: '.$location.'</li>
+            <li class="list-group-item">When: '.$date.' Time: '.$time.':00</li>
+          </ul>
+        </div>
+        <br>
+              ';
+            }
+
+
+             ?>
+
+            <br><br>
+
           </div>
 
           <main role="main" id="whiteBlock">
@@ -165,7 +208,7 @@ include 'db/database.php';
               </div>
 
               <div class="item">
-                <img src="images/sp1.png" alt="2mp" width="460" height="345">
+                <img src="images/sp2.png" alt="2mp" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>You Special Occassion</h3>
                   <p>We will fill the dance floor Guaranteed!</p>
@@ -195,7 +238,11 @@ include 'db/database.php';
               </main>
               <br>
 
+
+
               <div class="bio" id="whiteBlock">
+
+                <i><h1>Now its's A Party!</h1></i>
                 Sick of the same cheesy bands? 2morrow's party are a fresh and funky wedding party band covering all genre's from A-Z . We'd love you to take 5 mins and look at our promo video and live wedding footage and let the dance floor do the talking.
 
                 <br><br>
@@ -214,11 +261,17 @@ include 'db/database.php';
 
               </div>
 
+
+
+
+
           <br>
 
           <div class="row marketing" >
 
             <div class="col-lg-4"  id="whiteBlock">
+
+              <i class="fa fa-headphones" aria-hidden="true"></i>
 
 
                     <h4>Audio Samples</h4>
@@ -229,11 +282,15 @@ include 'db/database.php';
             </div>
 
             <div class="col-lg-3" id="whiteBlock">
+
+                  <i class="fa fa-flag" aria-hidden="true"></i>
               <h4>Upcomming Shows</h4>
+
+
 
         <?php
             //the following is to produce a upcomming shows on the index page
-            $query1 = "SELECT * FROM shows; ";
+            $query1 = "SELECT * FROM shows ORDER BY date ; ";
             $run = $mysqli->query($query1);
             while ($row = $run->fetch_array()) {
 
@@ -262,6 +319,8 @@ include 'db/database.php';
 
 
             <div class="col-lg-4"  id="whiteBlock">
+
+              <i class="fa fa-phone" aria-hidden="true"></i>
                   <h4>Get in Touch</h4>
 
 
@@ -292,6 +351,8 @@ include 'db/database.php';
         <div class="row marketing">
 
           <div class="col-lg-4" id="whiteBlock">
+
+            <i class="fa fa-comments-o" aria-hidden="true"></i>
             <h4>Testamonials</h4>
 
 
@@ -333,7 +394,11 @@ include 'db/database.php';
     </div>
 
           <div class="col-lg-7" id="whiteBlock" style="margin-left:3%;">
-            <h4>Promo Video</h4>
+
+            <i class="fa fa-play" aria-hidden="true"></i>
+            <h4>Videos</h4>
+
+
             <div>
               <p>Check out our Promo Video. You will not be disapointed</p>
               <iframe width="98%" height="500px" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -351,7 +416,7 @@ include 'db/database.php';
               <h4>some other mad video</h4>
               <p>show different types of genre</p>
 
-                          <iframe width="560" height="315" src="https://www.youtube.com/embed/dPk1mgmNeiY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                          <iframe width="98%" height="500px" src="https://www.youtube.com/embed/dPk1mgmNeiY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </div>
 
@@ -366,12 +431,38 @@ include 'db/database.php';
 
     </div> <!-- /container -->
 
+
+
     <footer class="footer">
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="testamonials.php">Testamonials</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="setlist.php">Setlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <br>
+
 
  <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
+        <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube fa-6"></i></a>
         <a href="#"><i class="fa fa-snapchat"></i></a>
+
+          <a href="https://www.weddingsonline.ie/suppliers/2morrows-party"  target="_blank"><img title="weddingsonline.ie" alt="weddingsonline.ie" src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
 
 
 

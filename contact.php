@@ -15,27 +15,27 @@ include 'db/database.php';
 
 
     <title>2morrows Party - Contact us</title>
+    <link rel="icon" href="images/favicon.png" type="image/png"
+    	sizes="16x16">
 
 
 
     <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
  <link href="css/bootstrap.min.css" rel="stylesheet">
  <!--jquery-->
- <script src="js/jquery.js"></script>
+        <script src="js/jquery.js"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
     <script src="js/myscripts.js"></script>
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
     <style>
       /* Remove the navbar's default margin-bottom and rounded borders */
@@ -94,7 +94,7 @@ include 'db/database.php';
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
-            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
+            <p><a class="btn btn-primary" href="contact.php" role="button">Enquire Now</a></p>
 
           </div>
           </div>
@@ -107,14 +107,42 @@ include 'db/database.php';
                   <div class="col-lg-12">
                     <h1>Contact Us</h1>
 
+                    <form name="myform" id="myform" action="contact.php" method="post" onclick="return validateEnquiry();">
+
+                      <div class="form-group">
+                         <label for="name">Name</label>
+                         <input class="form-control" id="name" name="name" required></textarea>
+                       </div>
+
+                       <div class="form-group">
+                          <label for="email">Email</label>
+                          <input class="form-control" id="email" name="email" type="email" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                           <label for="number">Contact Number</label>
+                           <input class="form-control" type="tel" id="number" name="number" required></textarea>
+                         </div>
 
 
+                      <div class="form-group">
+                        <label for="date">Date</label>
+                          <input class="form-control" type="date" id="pickdate" size="8" name="date" required>
+                             </div>
+
+                     <div class="form-group">
+                        <label for="venue">Venue</label>
+                        <input class="form-control" id="venue" name="venue" required></textarea>
+                      </div>
 
 
+                      <div class="form-group">
+                         <label for="query">Query</label>
+                         <textarea class="form-control" id="query" rows="3" name="query" required></textarea>
+                       </div>
 
-
-
-
+                      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    </form>
 
 
                 </div>
@@ -129,10 +157,40 @@ include 'db/database.php';
 
     <footer class="footer">
 
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Home </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="testamonials.php">Testamonials</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="setlist.php">Setlist</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <br>
+
  <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
         <a href="#"><i class="fa fa-snapchat"></i></a>
+
+
+          <a href="https://www.weddingsonline.ie/suppliers/2morrows-party"  target="_blank"><img title="weddingsonline.ie" alt="weddingsonline.ie" src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
+
+
+
+
+        <br>
 
 
 
@@ -141,3 +199,37 @@ include 'db/database.php';
 
   </body>
 </html>
+
+<?php
+
+if(isset($_POST['submit'])){
+
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $number = $_POST['number'];
+  $date = $_POST['date'];
+  $venue = $_POST['venue'];
+  $query = $_POST['query'];
+
+  //insert into db
+  $query3 = "INSERT INTO queries (name,email,phone,date,venue,query) VALUES ('$name','$email','$number','$date','$venue','$query'); ";
+  $run = $mysqli->query($query3);
+
+  if($run != 0){
+      echo '
+        <script>alert("Thank you. Somebody will be in touch very soon");</script>
+
+      ';
+
+          echo "<script>window.open('index.php','_self')</script>";
+  }else{
+    echo '
+      <script>alert("Something went wrong!");</script>
+    ';
+
+
+  //function email()
+}
+}
+
+ ?>

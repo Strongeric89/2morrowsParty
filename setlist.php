@@ -15,6 +15,8 @@ include 'db/database.php';
 
 
     <title>2morrows Party - Setlits</title>
+    <link rel="icon" href="images/favicon.png" type="image/png"
+    	sizes="16x16">
 
 
 
@@ -94,123 +96,145 @@ include 'db/database.php';
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
-            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
+            <p><a class="btn btn-primary" href="contact.php" role="button">Enquire Now</a></p>
 
           </div>
           </div>
 
 
-
-              <div class="bio" id="whiteBlock">
-                <div class="row marketing">
-
-                  <div class="col-lg-12">
-                    <h1>Setlists</h1>
+<div class="row marketing">
 
 
-
-
-
-
-
-
-
-
-
-                </div>
-
+          <div class="col-md-4" id="whiteBlock">
+            <h2>Wedding Set</h2>
+            <div class="card" style="width: 100%">
+              <img class="card-img-top" src="images/sp1.png" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">Rock set</h4>
+                <p class="card-text">  <p> <ol>
+                    <li>I Feel Good - James Brown</li>
+                    <li>Blame it on the boogie</li>
+                    <li>Chic Mix</li>
+                    <li>Cheap thrills/good feelings</li>
+                    <li>Twist n shout/do ya love me/la bamba</li>
+                    <li>Ain’t no Mountain</li>
+                    <li>Im so excited
+                </li>
+                    <li>    Lady marmalade</li>
+                    <li>Shout</li>
+                    <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                    <li>Proud Mary </li>
+                    <br>
+                  </ol>  <a href="#" class="btn btn-primary">Preview</a>
+                  <br><br>
               </div>
+            </div>
 
 
-              <div class="row">
-                        <div class="col-md-4">
-                          <h2>Sample Wedding Set</h2>
-                          <p> <ol>
-                            <li>I Feel Good - James Brown</li>
-                            <li>Blame it on the boogie</li>
-                            <li>Chic Mix</li>
-                            <li>Cheap thrills/good feelings</li>
-                            <li>Twist n shout/do ya love me/la bamba</li>
-                            <li>Ain’t no Mountain</li>
-                            <li>Im so excited
-                        </li>
-                            <li>    Lady marmalade</li>
-                            <li>Shout</li>
-                            <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                            <li>Proud Mary </li>
-                          </ol>
+          </div>
+
+          <div class="col-md-3" id="whiteBlock">
+            <h2>Pub Set</h2>
+            <div class="card" style="width: 100%">
+              <img class="card-img-top" src="images/sp1.png" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">Pub set</h4>
+                <p class="card-text">  <p> <ol>
+                    <li>I Feel Good - James Brown</li>
+                    <li>Blame it on the boogie</li>
+                    <li>Chic Mix</li>
+                    <li>Cheap thrills/good feelings</li>
+                    <li>Twist n shout/do ya love me/la bamba</li>
+                    <li>Ain’t no Mountain</li>
+                    <li>Im so excited
+                </li>
+                    <li>    Lady marmalade</li>
+                    <li>Shout</li>
+                    <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                    <li>Proud Mary </li>
+                    <br>
+                  </ol>  <a href="#" class="btn btn-primary">Preview</a>
+                  <br><br>
+              </div>
+            </div>
 
 
+          </div>
+
+          <div class="col-md-4" id="whiteBlock">
+            <h2>Rock Set</h2>
+            <div class="card" style="width: 100%;">
+              <img class="card-img-top" src="images/sp1.png" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">Pop set</h4>
+                <p class="card-text">  <p> <ol>
+                    <li>I Feel Good - James Brown</li>
+                    <li>Blame it on the boogie</li>
+                    <li>Chic Mix</li>
+                    <li>Cheap thrills/good feelings</li>
+                    <li>Twist n shout/do ya love me/la bamba</li>
+                    <li>Ain’t no Mountain</li>
+                    <li>Im so excited
+                </li>
+                    <li>    Lady marmalade</li>
+                    <li>Shout</li>
+                    <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                    <li>Proud Mary </li>
+                    <br>
+                  </ol>  <a href="#" class="btn btn-primary">Preview</a>
+                  <br><br>
+              </div>
+            </div>
 
 
-
-
-
-
-
-    </p>
-                          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                        <div class="col-md-4">
-                          <h2>Sample Pub Set</h2>
-                          <p> <ol>
-                            <li>I Feel Good - James Brown</li>
-                            <li>Blame it on the boogie</li>
-                            <li>Chic Mix</li>
-                            <li>Cheap thrills/good feelings</li>
-                            <li>Twist n shout/do ya love me/la bamba</li>
-                            <li>Ain’t no Mountain</li>
-                            <li>Im so excited
-                        </li>
-                            <li>    Lady marmalade</li>
-                            <li>Shout</li>
-                            <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                            <li>Proud Mary </li>
-                          </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                        <div class="col-md-4">
-                          <h2>Sample Mix Set List</h2>
-                          <p> <ol>
-                            <li>I Feel Good - James Brown</li>
-                            <li>Blame it on the boogie</li>
-                            <li>Chic Mix</li>
-                            <li>Cheap thrills/good feelings</li>
-                            <li>Twist n shout/do ya love me/la bamba</li>
-                            <li>Ain’t no Mountain</li>
-                            <li>Im so excited
-                        </li>
-                            <li>    Lady marmalade</li>
-                            <li>Shout</li>
-                            <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                            <li>Proud Mary </li>
-                          </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                        </div>
-                      </div>
+          </div>
 
 
 
 
 
-
-
-
-
-
-    </div> <!-- /container -->
-  </div>
 </div>
 
-    <footer class="footer">
-
- <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
-      <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
-        <a href="#"><i class="fa fa-snapchat"></i></a>
+  </div>
 
 
 
-    </footer>
+  <footer class="footer">
+
+    <nav>
+      <ul class="nav nav-pills float-right">
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="testamonials.php">Testamonials</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active " href="setlist.php">Setlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.php">Contact</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <br>
+
+<b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
 
 
+    <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
+      <a href="#"><i class="fa fa-snapchat"></i></a>
+
+        <a href="https://www.weddingsonline.ie/suppliers/2morrows-party"  target="_blank"><img title="weddingsonline.ie" alt="weddingsonline.ie" src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
+
+
+
+
+  </footer>
   </body>
 </html>

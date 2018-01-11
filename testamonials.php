@@ -14,6 +14,8 @@ include 'db/database.php';
 
 
     <title>2morrows Party - Testamonials</title>
+    <link rel="icon" href="images/favicon.png" type="image/png"
+    	sizes="16x16">
 
 
 
@@ -93,17 +95,12 @@ include 'db/database.php';
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
-            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
+            <p><a class="btn btn-primary" href="contact.php" role="button">Enquire Now</a></p>
 
           </div>
           </div>
-
-
-
 
           <section class="row text-center placeholders" id="whiteBlock">
-
-
             <div class="col-6 col-sm-3 placeholder">
               <img src="images/sp17.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
               <h4>Weddings</h4>
@@ -202,12 +199,38 @@ include 'db/database.php';
 
     <footer class="footer">
 
+      <nav>
+        <ul class="nav nav-pills float-right">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Home </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="testamonials.php">Testamonials</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="setlist.php">Setlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+
+
+            </div>
+
+
+        </ul>
+
+      </nav>
+
+      <br>
  <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
         <a href="#"><i class="fa fa-snapchat"></i></a>
 
-
+  <a href="https://www.weddingsonline.ie/suppliers/2morrows-party"  target="_blank"><img title="weddingsonline.ie" alt="weddingsonline.ie" src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
 
     </footer>
 

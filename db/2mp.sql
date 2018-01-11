@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2018 at 02:32 PM
+-- Generation Time: Jan 11, 2018 at 09:34 PM
 -- Server version: 5.7.18
 -- PHP Version: 5.6.30
 
@@ -25,6 +25,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `queries`
+--
+
+CREATE TABLE `queries` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(12) NOT NULL,
+  `date` date NOT NULL,
+  `venue` varchar(50) NOT NULL,
+  `query` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `shows`
 --
 
@@ -40,7 +56,8 @@ CREATE TABLE `shows` (
 --
 
 INSERT INTO `shows` (`id`, `date`, `location`, `time`) VALUES
-(1, '2018-01-27', 'Tolka Pub', 10);
+(1, '2018-01-27', 'Tolka Pub', 10),
+(2, '2018-01-13', 'The Wedding Journal Show', 11);
 
 -- --------------------------------------------------------
 
@@ -50,7 +67,7 @@ INSERT INTO `shows` (`id`, `date`, `location`, `time`) VALUES
 
 CREATE TABLE `testamonials` (
   `id` int(11) NOT NULL,
-  `message` varchar(255) NOT NULL,
+  `message` varchar(1000) NOT NULL,
   `customer` varchar(50) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -104,13 +121,18 @@ INSERT INTO `testamonials` (`id`, `message`, `customer`, `date`) VALUES
 (42, 'I knew straight away who i wanted to play at our wedding...This band is made up of the nicest bunch of guys who will do whatever it takes to make your wedding evening one everyone will remember and talk about for a long time. The lads hadnt an easy quest as most of our guests are amazingly talented musicians but the guys of 2morrows Party entertained us right til the very early hours of the morning :)  A wide selection of music professionally played that suits all ages andbackgrounds...i just wish we could do it all again guys x', 'Linda and Alan Clarke', '2013-04-02'),
 (43, 'These guys are such a class act we have the lads for our wedding and they really made our night had everyone going from young to old they have a wide range of songs and everyone was catered for. they were the talk of our day money well spent would highly recommend them to anyone looking for a band for their wedding :)', 'Claudine and hugh McDonagh', '2013-05-12'),
 (44, 'Hey guys, what can I say you were absolutely brilliant to deal with from day one. you guys were so professional and kept the crowd going and the dance floor full all night! so fun and energetic brilliant night thank you so much', 'Claire and Mickey', '2014-10-13'),
-(45, 'My friend suggested to get 2morrows Party for my wedding, so we went to see them play in Cairnes bar. My fiance and I & all my friends loved them. Young & old audience was dancing to their music! So it was a definite choice to get them to play at our wedding!
-They were brilliant at the wedding, all my guest loved them! They played all the popular music so all age groups could enjoy! Everyone was on the dance floor from the minute they started till they finish playing! The DJ was great too! 2morrows Party made our wedding memorable and special! Affordable price too!
-Thanks a million lads!', 'Evita and Mark', '2015-11-13');
+(45, 'My friend suggested to get 2morrows Party for my wedding, so we went to see them play in Cairnes bar. My fiance and I & all my friends loved them. Young & old audience was dancing to their music! So it was a definite choice to get them to play at our wedding!\r\nThey were brilliant at the wedding, all my guest loved them! They played all the popular music so all age groups could enjoy! Everyone was on the dance floor from the minute they started till they finish playing! The DJ was great too! 2morrows Party made our wedding memorable and special! Affordable price too!\r\nThanks a million lads!', 'Evita and Mark', '2015-11-13'),
+(54, 'stufff', 'eric test', '2018-01-19');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `queries`
+--
+ALTER TABLE `queries`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `shows`
@@ -129,15 +151,20 @@ ALTER TABLE `testamonials`
 --
 
 --
+-- AUTO_INCREMENT for table `queries`
+--
+ALTER TABLE `queries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `shows`
 --
 ALTER TABLE `shows`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `testamonials`
 --
 ALTER TABLE `testamonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

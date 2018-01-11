@@ -3,17 +3,34 @@
   font-family:sans-serif;
 }
 
+body{
+    background-image: url(../images/music6.gif);
+    background-position:bottom center;
+    background-repeat: no-repeat;
+
+
+
+
+
+
+}
+
+.icons{
+  font-size: 32px;
+}
+
 
 
 .container {
-  margin-top:2% !important;
-
+  /*
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
-    /*margin-right: 5% !important;
+    margin-right: 5% !important;
     margin-left: 5% !important;
     padding-top: 3% !important;*/
+
+    margin-top:2% !important;
 
     background-image: url(../images/topbg.jpg);
 
@@ -74,10 +91,10 @@
 .footer{
   text-align: center;
   margin-top: 5%;
-    margin-bottom:5% !important;
+    margin-bottom:15% !important;
     padding:2%;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
 
 }
 
@@ -115,6 +132,9 @@
   font-weight: bold;
   position:relative;
   text-align: center;
+  background-image: url(../images/music6.gif);
+  background-position:bottom center;
+    background-repeat: no-repeat;
 
 
 }
