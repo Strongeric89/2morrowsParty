@@ -229,7 +229,20 @@ if(isset($_POST['submit'])){
 
 
   //function email()
+  // the message
+  $msg = "Wedding Enquiry from 2mp Website\nName:" .$name . "\nEmail:" .$email. "\nPhone Number:"
+   .$number. "\nWedding Date: " .$date. "\nVenue:" .$venue. "\nQuery:" .$query ;
+
+  // use wordwrap() if lines are longer than 70 characters
+  $msg = wordwrap($msg,70);
+
+  // send email
+  mail("strong.erik@gmail.com.com","Wedding Enquiry - " .$name. " " .$date ,$msg);
 }
 }
+
+
+
+
 
  ?>
