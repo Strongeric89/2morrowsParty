@@ -1,3 +1,4 @@
+
 <?php
 
 include 'db/database.php';
@@ -13,7 +14,7 @@ include 'db/database.php';
     <meta name="author" content="">
 
 
-    <title>2morrows Party - Setlists </title>
+    <title>2morrows Party - Setlits</title>
 
 
 
@@ -35,90 +36,76 @@ include 'db/database.php';
     <script src="js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
 
     <style>
-      .jumbotron {
-         background-image: url('images/sp9.png');
-        height:500px;
-        background-repeat: no-repeat;
-        background-size: cover;
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
 
       }
-      .jumbotron .cont {
+      .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
 
-        color:blue
-        font-size: 20px;
-        font-weight: bold;
-        position:relative;
-        top:250px;
+  }
+
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
       }
     </style>
-
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
   </head>
 
   <body>
 
     <div class="container">
-      <header class="header clearfix">
+
+      <header class="header clearfix" id="whiteBlock">
+        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
-              <a class="nav-link " href="index.php">Home </a>
+              <a class="nav-link" href="index.php">Home </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link " href="testamonials.php">Testamonials </a>
+            <li class="nav-item  ">
+              <a class="nav-link" href="testamonials.php">Testamonials</a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" href="setlist.php">Setlist <span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+              <a class="nav-link" href="setlist.php">Setlist  <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.php">Contact</a>
             </li>
           </ul>
+
         </nav>
-        <h3 class="text-muted" id="mainTxtTop">2morrow's Party - Wedding Band</h3>
-          <hr>
+
+
       </header>
 
 
-      <main role="main">
 
-
-
-        <div class="jumbotron">
-          <div class="cont">
-            <h1 class="display-3">Setlists</h1>
-            <p class="lead">loads of tunes </p>
-
+        <div class="jumbotron" >
+          <div class="cont" id="whiteBlock" width="30%" height="50%">
+            <h1 class="display-3">Sale Now On!</h1>
+            <p class="lead">Free DJ with every booking, when booked this month</p>
+            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
 
           </div>
           </div>
 
 
 
+              <div class="bio" id="whiteBlock">
+                <div class="row marketing">
 
-          <div class="row">
-                    <div class="col-md-4">
-                      <h2>Sample Wedding Set</h2>
-                      <p> <ol>
-                        <li>I Feel Good - James Brown</li>
-                        <li>Blame it on the boogie</li>
-                        <li>Chic Mix</li>
-                        <li>Cheap thrills/good feelings</li>
-                        <li>Twist n shout/do ya love me/la bamba</li>
-                        <li>Ain’t no Mountain</li>
-                        <li>Im so excited
-                    </li>
-                        <li>    Lady marmalade</li>
-                        <li>Shout</li>
-                        <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                        <li>Proud Mary </li>
-                      </ol>
+                  <div class="col-lg-12">
+                    <h1>Setlists</h1>
 
 
 
@@ -128,44 +115,30 @@ include 'db/database.php';
 
 
 
-</p>
-                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                      <h2>Sample Pub Set</h2>
-                      <p> <ol>
-                        <li>I Feel Good - James Brown</li>
-                        <li>Blame it on the boogie</li>
-                        <li>Chic Mix</li>
-                        <li>Cheap thrills/good feelings</li>
-                        <li>Twist n shout/do ya love me/la bamba</li>
-                        <li>Ain’t no Mountain</li>
-                        <li>Im so excited
-                    </li>
-                        <li>    Lady marmalade</li>
-                        <li>Shout</li>
-                        <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                        <li>Proud Mary </li>
-                      </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                    <div class="col-md-4">
-                      <h2>Sample Mix Set List</h2>
-                      <p> <ol>
-                        <li>I Feel Good - James Brown</li>
-                        <li>Blame it on the boogie</li>
-                        <li>Chic Mix</li>
-                        <li>Cheap thrills/good feelings</li>
-                        <li>Twist n shout/do ya love me/la bamba</li>
-                        <li>Ain’t no Mountain</li>
-                        <li>Im so excited
-                    </li>
-                        <li>    Lady marmalade</li>
-                        <li>Shout</li>
-                        <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                        <li>Proud Mary </li>
-                      </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                  </div>
+
+
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                        <div class="col-md-4">
+                          <h2>Sample Wedding Set</h2>
+                          <p> <ol>
+                            <li>I Feel Good - James Brown</li>
+                            <li>Blame it on the boogie</li>
+                            <li>Chic Mix</li>
+                            <li>Cheap thrills/good feelings</li>
+                            <li>Twist n shout/do ya love me/la bamba</li>
+                            <li>Ain’t no Mountain</li>
+                            <li>Im so excited
+                        </li>
+                            <li>    Lady marmalade</li>
+                            <li>Shout</li>
+                            <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                            <li>Proud Mary </li>
+                          </ol>
 
 
 
@@ -174,21 +147,70 @@ include 'db/database.php';
 
 
 
-      </main>
 
-      <footer class="footer">
-  <p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
-        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
-          <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
-          <a href="#"><i class="fa fa-snapchat"></i></a>
+    </p>
+                          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
+                        <div class="col-md-4">
+                          <h2>Sample Pub Set</h2>
+                          <p> <ol>
+                            <li>I Feel Good - James Brown</li>
+                            <li>Blame it on the boogie</li>
+                            <li>Chic Mix</li>
+                            <li>Cheap thrills/good feelings</li>
+                            <li>Twist n shout/do ya love me/la bamba</li>
+                            <li>Ain’t no Mountain</li>
+                            <li>Im so excited
+                        </li>
+                            <li>    Lady marmalade</li>
+                            <li>Shout</li>
+                            <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                            <li>Proud Mary </li>
+                          </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
+                        <div class="col-md-4">
+                          <h2>Sample Mix Set List</h2>
+                          <p> <ol>
+                            <li>I Feel Good - James Brown</li>
+                            <li>Blame it on the boogie</li>
+                            <li>Chic Mix</li>
+                            <li>Cheap thrills/good feelings</li>
+                            <li>Twist n shout/do ya love me/la bamba</li>
+                            <li>Ain’t no Mountain</li>
+                            <li>Im so excited
+                        </li>
+                            <li>    Lady marmalade</li>
+                            <li>Shout</li>
+                            <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                            <li>Proud Mary </li>
+                          </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                        </div>
+                      </div>
 
 
 
-      </footer>
+
+
+
+
+
+
 
     </div> <!-- /container -->
+  </div>
+</div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <footer class="footer">
+
+ <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
+      <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-snapchat"></i></a>
+
+
+
+    </footer>
+
+
   </body>
 </html>
