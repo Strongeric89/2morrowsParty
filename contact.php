@@ -236,8 +236,15 @@ if(isset($_POST['submit'])){
   // use wordwrap() if lines are longer than 70 characters
   $msg = wordwrap($msg,70);
 
+
+      $subject = "Wedding Enq Enquiry";
+     $mailto = "strong.erik@gmail.com";
+     $headers = "From: " .$email . '\r\n' . "CC: ericstrong89@gmail.com";
+     mail($mailto, $subject, $msg, $headers);
+
+
   // send email
-  mail("strong.erik@gmail.com.com","Wedding Enquiry - " .$name. " " .$date ,$msg);
+  //mail("strong.erik@gmail.com","Wedding Enquiry - " .$name. " " .$date ,$msg,$headers);
 }
 }
 
