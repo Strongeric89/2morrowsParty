@@ -62,7 +62,8 @@ include 'db/database.php';
   <body>
 
     <div class="container">
-      <header class="header clearfix">
+
+      <header class="header clearfix" id="whiteBlock">
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
@@ -81,16 +82,13 @@ include 'db/database.php';
           </ul>
         </nav>
         <h3 class="text-muted" id="mainTxtTop">2morrow's Party - Wedding Band</h3>
-          <hr>
+
       </header>
 
 
-      <main role="main">
 
-
-
-        <div class="jumbotron">
-          <div class="cont">
+        <div class="jumbotron" >
+          <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
             <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
@@ -98,8 +96,10 @@ include 'db/database.php';
           </div>
           </div>
 
+          <main role="main" id="whiteBlock">
 
-          <section class="row text-center placeholders">
+
+          <section class="row text-center placeholders" id="whiteBlock">
             <div class="col-6 col-sm-3 placeholder">
               <img src="images/sp17.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
               <h4>Weddings</h4>
@@ -125,24 +125,6 @@ include 'db/database.php';
 
 
 
-          <div class="bio">
-            Sick of the same cheesy bands? 2morrow's party are a fresh and funky wedding party band covering all genre's from A-Z . We'd love you to take 5 mins and look at our promo video and live wedding footage and let the dance floor do the talking.
-
-            <br><br>
-
-            2morrow's Party are a 5 piece, high energy and fun band who have played in venues such as the Aviva stadium, celebrated along side the Dublin GAA team to bring home Sam Maguire and even played corporate events for companies such as Ryanair and Coca-Cola.
-<br><br>
-            2MP cover all bases to get party started and ensure you have an amazing night.
-
-            Don't forget to check out our Wedding promo ; )
-
-
-
-            2morrows Party is a Wedding Band from Louth servicing weddings throughout the local area including all counties Nationwide .
-
-            2morrows Party is a professional Wedding Band that has been part of the Wedding Bands industry for seven years specialising in 80s, 90s, Dance, Pop, Country, Rock, Hip Hop, Funk and Current music for weddings and corporate events. .</p>
-
-          </div>
 
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -156,18 +138,13 @@ include 'db/database.php';
 
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-              <li data-target="#myCarousel" data-slide-to="3"></li>
-            </ol>
+
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner"  role="listbox">
 
               <div class="item active">
-                <img src="images/sp24.png" alt="2mp" width="460" height="345">
+                <img src="images/sp19.jpg" alt="2mp" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>Weddings</h3>
                   <p>We Cater for all genres</p>
@@ -210,14 +187,43 @@ include 'db/database.php';
               <span class="sr-only">Next</span>
             </a>
           </div>
+              </main>
+
+              <div class="bio" id="whiteBlock">
+                Sick of the same cheesy bands? 2morrow's party are a fresh and funky wedding party band covering all genre's from A-Z . We'd love you to take 5 mins and look at our promo video and live wedding footage and let the dance floor do the talking.
+
+                <br><br>
+
+                2morrow's Party are a 5 piece, high energy and fun band who have played in venues such as the Aviva stadium, celebrated along side the Dublin GAA team to bring home Sam Maguire and even played corporate events for companies such as Ryanair and Coca-Cola.
+    <br><br>
+                2MP cover all bases to get party started and ensure you have an amazing night.
+
+                Don't forget to check out our Wedding promo ; )
+
+
+
+                2morrows Party is a Wedding Band from Louth servicing weddings throughout the local area including all counties Nationwide .
+
+                2morrows Party is a professional Wedding Band that has been part of the Wedding Bands industry for seven years specialising in 80s, 90s, Dance, Pop, Country, Rock, Hip Hop, Funk and Current music for weddings and corporate events. .</p>
+
+              </div>
+
           <br>
 
-          <div class="row marketing">
+          <div class="row marketing" >
 
-            <div class="col-lg-6">
+            <div class="col-lg-4"  id="whiteBlock">
+
+
+                    <h4>Audio Samples</h4>
+                  <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/45984319&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true"></iframe>
+
+
+
+            </div>
+
+            <div class="col-lg-3" id="whiteBlock">
               <h4>Upcomming Shows</h4>
-
-
 
         <?php
             //the following is to produce a upcomming shows on the index page
@@ -248,12 +254,13 @@ include 'db/database.php';
 
               </div>
 
-            <div class="col-lg-6" id="videoBlock">
-              <h4>Get in Touch</h4>
+
+            <div class="col-lg-4"  id="whiteBlock">
+                  <h4>Get in Touch</h4>
 
 
               <div class="card" style="width: 100%;">
-  <img class="card-img-top" src="images/sp5.jpg" alt="image">
+  <img class="card-img-top" src="images/sp2.png"  alt="image">
   <div class="card-body">
     <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i> Email: 2morrowsparty@gmail.com </i></a></h5>
     <hr>
@@ -272,16 +279,12 @@ include 'db/database.php';
 
           </div>
 
-          <hr>
-
-
 
 
         <div class="row marketing">
 
-          <div class="col-lg-6">
+          <div class="col-lg-4" id="whiteBlock">
             <h4>Testamonials</h4>
-
 
 
       <?php
@@ -301,12 +304,12 @@ include 'db/database.php';
         <i class="fa fa-smile-o" aria-hidden="true"></i>   Review by: '.$customer.'
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">'.$date.'</li>
+          <li class="list-group-item">Wedding Date: '.$date.'</li>
           <li class="list-group-item">'.$message.'</li>
 
         </ul>
       </div>
-      <br>
+
             ';
           }
 
@@ -316,16 +319,16 @@ include 'db/database.php';
 
        <a href="testamonials.php">for more click here</a>
 
-            </div>
+    </div>
 
-          <div class="col-lg-6" id="videoBlock">
+          <div class="col-lg-7" id="whiteBlock">
             <h4>Promo Video</h4>
             <p>Check out our Promo Video. You will not be disapointed</p>
-            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="98%" height="40%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             <h4>another cool video</h4>
             <p>college gigs and shit</p>
-            <iframe width="98%" height="50%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="98%" height="40%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </div>
 
@@ -334,21 +337,19 @@ include 'db/database.php';
 
 
 
-      </main>
-
-      <footer class="footer">
-  <p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
-        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
-          <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
-          <a href="#"><i class="fa fa-snapchat"></i></a>
 
 
 
-      </footer>
 
     </div> <!-- /container -->
+    <footer class="footer">
+<p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
+      <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-snapchat"></i></a>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+    </footer>
   </body>
 </html>

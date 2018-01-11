@@ -45,19 +45,11 @@ include 'db/database.php';
     <style>
       .jumbotron {
         background-image: url('images/sp2.png');
-        height:500px;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-position: center;
+        background-size:contain;
 
       }
-      .jumbotron .cont {
 
-        color:blue
-        font-size: 20px;
-        font-weight: bold;
-        position:relative;
-        top:250px;
-      }
     </style>
 
 
@@ -165,7 +157,10 @@ include 'db/database.php';
     if($run != 0){
         echo '
           <script>alert("Thank you for your review!");</script>
+
         ';
+
+            echo "<script>window.open('testamonials.php','_self')</script>";
     }else{
       echo '
         <script>alert("Something went wrong!");</script>

@@ -102,6 +102,70 @@ include 'db/database.php';
 
 
 
+          <div class="row">
+                    <div class="col-md-4">
+                      <h2>Sample Wedding Set</h2>
+                      <p> <ol>
+                        <li>I Feel Good - James Brown</li>
+                        <li>Blame it on the boogie</li>
+                        <li>Chic Mix</li>
+                        <li>Cheap thrills/good feelings</li>
+                        <li>Twist n shout/do ya love me/la bamba</li>
+                        <li>Ain’t no Mountain</li>
+                        <li>Im so excited
+                    </li>
+                        <li>    Lady marmalade</li>
+                        <li>Shout</li>
+                        <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                        <li>Proud Mary </li>
+                      </ol>
+
+
+
+
+
+
+
+
+
+</p>
+                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2>Sample Pub Set</h2>
+                      <p> <ol>
+                        <li>I Feel Good - James Brown</li>
+                        <li>Blame it on the boogie</li>
+                        <li>Chic Mix</li>
+                        <li>Cheap thrills/good feelings</li>
+                        <li>Twist n shout/do ya love me/la bamba</li>
+                        <li>Ain’t no Mountain</li>
+                        <li>Im so excited
+                    </li>
+                        <li>    Lady marmalade</li>
+                        <li>Shout</li>
+                        <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                        <li>Proud Mary </li>
+                      </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2>Sample Mix Set List</h2>
+                      <p> <ol>
+                        <li>I Feel Good - James Brown</li>
+                        <li>Blame it on the boogie</li>
+                        <li>Chic Mix</li>
+                        <li>Cheap thrills/good feelings</li>
+                        <li>Twist n shout/do ya love me/la bamba</li>
+                        <li>Ain’t no Mountain</li>
+                        <li>Im so excited
+                    </li>
+                        <li>    Lady marmalade</li>
+                        <li>Shout</li>
+                        <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
+                        <li>Proud Mary </li>
+                      </ol>                      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                    </div>
+                  </div>
 
 
 
