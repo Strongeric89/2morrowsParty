@@ -121,7 +121,7 @@ include 'db/database.php';
 
                         <div class="form-group">
                            <label for="number">Contact Number</label>
-                           <input class="form-control" type="tel" id="number" name="number" required></textarea>
+                           <input class="form-control" type="number" id="number" name="number" required></textarea>
                          </div>
 
 
@@ -228,17 +228,16 @@ if(isset($_POST['submit'])){
     ';
 
 
-  //function email()
-  // the message
+  //function mail()
   $msg = "Wedding Enquiry from 2mp Website\nName:" .$name . "\nEmail:" .$email. "\nPhone Number:"
    .$number. "\nWedding Date: " .$date. "\nVenue:" .$venue. "\nQuery:" .$query ;
 
   // use wordwrap() if lines are longer than 70 characters
-  $msg = wordwrap($msg,70);
+  //$msg = wordwrap($msg,70);
 
 
       $subject = "Wedding Enq Enquiry";
-     $mailto = "strong.erik@gmail.com";
+     $mailto = "c15708709@mydit.com";
      $headers = "From: " .$email . '\r\n' . "CC: ericstrong89@gmail.com";
      mail($mailto, $subject, $msg, $headers);
 
