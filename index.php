@@ -64,6 +64,7 @@ include 'db/database.php';
     <div class="container">
 
       <header class="header clearfix" id="whiteBlock">
+        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
@@ -80,8 +81,9 @@ include 'db/database.php';
               <a class="nav-link" href="contact.php">Contact</a>
             </li>
           </ul>
+
         </nav>
-        <h3 class="text-muted" id="mainTxtTop">2morrow's Party - Wedding Band</h3>
+
 
       </header>
 
@@ -188,6 +190,7 @@ include 'db/database.php';
             </a>
           </div>
               </main>
+              <br>
 
               <div class="bio" id="whiteBlock">
                 Sick of the same cheesy bands? 2morrow's party are a fresh and funky wedding party band covering all genre's from A-Z . We'd love you to take 5 mins and look at our promo video and live wedding footage and let the dance floor do the talking.
@@ -216,8 +219,8 @@ include 'db/database.php';
 
 
                     <h4>Audio Samples</h4>
-                  <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/45984319&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true"></iframe>
-
+                  <!-- <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/45984319&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true"></iframe>
+ -->
 
 
             </div>
@@ -238,7 +241,7 @@ include 'db/database.php';
                 echo '
 
                 <div class="card" style="width: 100%;">
-          <div class="card-header">
+          <div class="card-header ">
             <i class="fa fa-calendar" aria-hidden="true"></i> Date: '.$date.'
           </div>
           <ul class="list-group list-group-flush">
@@ -259,7 +262,7 @@ include 'db/database.php';
                   <h4>Get in Touch</h4>
 
 
-              <div class="card" style="width: 100%;">
+    <div class="card" style="width: 100%;">
   <img class="card-img-top" src="images/sp2.png"  alt="image">
   <div class="card-body">
     <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i> Email: 2morrowsparty@gmail.com </i></a></h5>
@@ -279,6 +282,8 @@ include 'db/database.php';
 
           </div>
 
+          <br>
+
 
 
         <div class="row marketing">
@@ -289,7 +294,8 @@ include 'db/database.php';
 
       <?php
           //the following is to produce a testamonial on the index page
-          $query1 = "SELECT customer, message, date FROM testamonials where id < 4 ORDER BY date desc; ";
+          $query1 = "SELECT * FROM testamonials ORDER BY RAND() limit 0,4; ";
+
           $run = $mysqli->query($query1);
           while ($row = $run->fetch_array()) {
 
@@ -316,6 +322,7 @@ include 'db/database.php';
 
 
        ?>
+       <br>
 
        <a href="testamonials.php">for more click here</a>
 
@@ -323,12 +330,19 @@ include 'db/database.php';
 
           <div class="col-lg-7" id="whiteBlock">
             <h4>Promo Video</h4>
-            <p>Check out our Promo Video. You will not be disapointed</p>
-            <iframe width="98%" height="40%" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div>
+              <p>Check out our Promo Video. You will not be disapointed</p>
+              <iframe width="98%" height="500px" src="https://www.youtube.com/embed/tvARmKG-S_4?start=6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-            <h4>another cool video</h4>
-            <p>college gigs and shit</p>
-            <iframe width="98%" height="40%" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+            <div >
+              <h4>another cool video</h4>
+              <p>college gigs and shit</p>
+              <iframe width="98%" height="500px" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </div>
+
 
             </div>
 
@@ -341,9 +355,13 @@ include 'db/database.php';
 
 
 
+
+
     </div> <!-- /container -->
+
     <footer class="footer">
-<p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
+
+ <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
         <a href="#"><i class="fa fa-snapchat"></i></a>

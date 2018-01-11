@@ -13,7 +13,7 @@ include 'db/database.php';
     <meta name="author" content="">
 
 
-    <title>2morrows Party - Testamonials </title>
+    <title>2morrows Party - Testamonials</title>
 
 
 
@@ -35,42 +35,43 @@ include 'db/database.php';
     <script src="js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
-
 
     <style>
-      .jumbotron {
-         background-image: url('images/sp8.png');
-        height:500px;
-        background-repeat: no-repeat;
-        background-size: cover;
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
 
       }
-      .jumbotron .cont {
+      .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
 
-        color:blue
-        font-size: 20px;
-        font-weight: bold;
-        position:relative;
-        top:250px;
+  }
+
+      /* Add a gray background color and some padding to the footer */
+      footer {
+        background-color: #f2f2f2;
+        padding: 25px;
       }
     </style>
-
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
   </head>
 
   <body>
 
     <div class="container">
-      <header class="header clearfix">
+
+      <header class="header clearfix" id="whiteBlock">
+        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
         <nav>
           <ul class="nav nav-pills float-right">
             <li class="nav-item">
-              <a class="nav-link " href="index.php">Home </a>
+              <a class="nav-link" href="index.php">Home </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active " href="#">Testamonials <span class="sr-only">(current)</span></a>
+            <li class="nav-item active ">
+              <a class="nav-link" href="testamonials.php">Testamonials <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
@@ -80,22 +81,19 @@ include 'db/database.php';
               <a class="nav-link" href="contact.php">Contact</a>
             </li>
           </ul>
+
         </nav>
-        <h3 class="text-muted" id="mainTxtTop">2morrow's Party - Wedding Band</h3>
-          <hr>
+
+
       </header>
 
 
-      <main role="main">
 
-
-
-        <div class="jumbotron">
-          <div class="cont">
-            <h1 class="display-3">Testamonials</h1>
-            <p class="lead">We Pride ourselfs on our work. Check out what other people have had to say </p>
-            <p><a class="btn btn-primary" href="review.php" role="button">Leave a Review
-            </a></p>
+        <div class="jumbotron" >
+          <div class="cont" id="whiteBlock" width="30%" height="50%">
+            <h1 class="display-3">Sale Now On!</h1>
+            <p class="lead">Free DJ with every booking, when booked this month</p>
+            <p><a class="btn btn-primary" href="#" role="button">Enquire Now</a></p>
 
           </div>
           </div>
@@ -103,74 +101,116 @@ include 'db/database.php';
 
 
 
+          <section class="row text-center placeholders" id="whiteBlock">
 
 
-
-
-
-        <div class="row marketing">
-
-          <div class="col-lg-12">
-            <h4>Testamonials</h4>
-
-
-
-      <?php
-          //the following is to produce a testamonial on the index page
-          $query1 = "SELECT customer, message, date FROM testamonials ORDER BY date desc; ";
-          $run = $mysqli->query($query1);
-          while ($row = $run->fetch_array()) {
-
-              $message = $row['message'];
-              $customer = $row['customer'];
-              $date = $row['date'];
-
-              echo '
-
-              <div class="card" style="width: 100%;">
-        <div class="card-header">
-        <i class="fa fa-smile-o" aria-hidden="true"></i>   Review by: '.$customer.'
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Wedding Date: '.$date.'</li>
-          <li class="list-group-item">'.$message.'</li>
-
-        </ul>
-      </div>
-      <br>
-            ';
-          }
-
-
-
-       ?>
-
-
-
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp17.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Weddings</h4>
+              <div class="text-muted">we do deadly weddings</div>
             </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp15.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Events</h4>
+              <span class="text-muted">Madness</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp12.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Pubs and Clubs</h4>
+              <span class="text-muted">we have a mad set list</span>
+            </div>
+            <div class="col-6 col-sm-3 placeholder">
+              <img src="images/sp10.png" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Special Occassions</h4>
+              <span class="text-muted">eric is class at web dev</span>
+            </div>
+              add in a way to search through testamonials. search engine
+          </section>
 
 
 
 
-        </div>
 
 
 
-      </main>
+              <br>
 
-      <footer class="footer">
-  <p>&copy; 2morrow's Party 2017 | by Eric Strong</p>
-        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
-          <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
-          <a href="#"><i class="fa fa-snapchat"></i></a>
+              <div class="bio" id="whiteBlock">
+                <div class="row marketing">
+
+                  <div class="col-lg-12">
+                    <h1>Testamonials</h1>
+                    <p><a class="btn btn-primary" href="review.php" role="button">Leave a Review
+          </a></p>
+
+          <br>
 
 
 
-      </footer>
+              <?php
+                  //the following is to produce a testamonial on the index page
+                  $query1 = "SELECT customer, message, date FROM testamonials ORDER BY date desc; ";
+                  $run = $mysqli->query($query1);
+                  while ($row = $run->fetch_array()) {
+
+                      $message = $row['message'];
+                      $customer = $row['customer'];
+                      $date = $row['date'];
+
+                      echo '
+
+                      <div class="card" style="width: 100%;">
+                <div class="card-header">
+                <i class="fa fa-smile-o" aria-hidden="true"></i>   Review by: '.$customer.'
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Wedding Date: '.$date.'</li>
+                  <li class="list-group-item">'.$message.'</li>
+
+                </ul>
+              </div>
+              <br>
+                    ';
+                  }
+
+
+
+               ?>
+
+
+
+
+
+
+
+
+                </div>
+
+              </div>
+
+
+
+
+
+
+
+
 
     </div> <!-- /container -->
+  </div>
+</div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <footer class="footer">
+
+ <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
+      <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-snapchat"></i></a>
+
+
+
+    </footer>
+
+
   </body>
 </html>

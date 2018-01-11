@@ -1,10 +1,17 @@
+*{
+  font-style: oblique;
+  font-family:sans-serif;
+}
+
+
+
 .container {
     width: 100%;
     padding-right: 10px;
     padding-left: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 3%;
+    /*margin-right: 5% !important;
+    margin-left: 5% !important;
+    padding-top: 3% !important;*/
 
     background-image: url(../images/topbg.jpg);
 
@@ -14,6 +21,7 @@
 #whiteBlock{
   margin: 10px;
   padding:5%;
+
       background-color: #ffffff;
 
       color:black;
@@ -27,6 +35,11 @@
 #whiteBlock div h4 h5 p{
   font-weight:bold;
     color:#000000;
+}
+
+.card-header {
+  background-color: gold;
+
 }
 
 .header{
@@ -45,7 +58,7 @@
 
 .nav{
   margin-top:1%;
-  font-size: 23px;
+  font-size: 32px;
 
 
 }
@@ -69,7 +82,7 @@
 #mainTxtTop{
   font-size: 36px;
   font-family: 'Lobster', 'cursive' !important;
-  color:pink;
+  font-family color:pink;
 
 }
 
