@@ -221,8 +221,8 @@ if(isset($_POST['submit'])){
      .$number. "\nWedding Date: " .$date. "\nVenue:" .$venue. "\nQuery:" .$query ;
 
       $subject = "Wedding Enquiry: " .$name;
-       $mailto = "strong.erik@gmail.com";
-       $headers = "From:  " .$email. '\r\n';
+      $mailto = "2morrowsparty@gmail.com";
+      $headers = "From:  " .$email;
        mail($mailto, $subject, $msg, $headers);
 
 
