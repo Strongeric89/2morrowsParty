@@ -216,6 +216,16 @@ if(isset($_POST['submit'])){
   $run = $mysqli->query($query3);
 
   if($run != 0){
+
+    $msg = "Wedding Enquiry from 2mp Website\nName:" .$name . "\nEmail:" .$email. "\nPhone Number:"
+     .$number. "\nWedding Date: " .$date. "\nVenue:" .$venue. "\nQuery:" .$query ;
+
+      $subject = "Wedding Enquiry: " .$name;
+       $mailto = "strong.erik@gmail.com";
+       $headers = "From:  " .$email. '\r\n';
+       mail($mailto, $subject, $msg, $headers);
+
+
       echo '
         <script>alert("Thank you. Somebody will be in touch very soon");</script>
 
@@ -229,21 +239,7 @@ if(isset($_POST['submit'])){
 
 
   //function mail()
-  $msg = "Wedding Enquiry from 2mp Website\nName:" .$name . "\nEmail:" .$email. "\nPhone Number:"
-   .$number. "\nWedding Date: " .$date. "\nVenue:" .$venue. "\nQuery:" .$query ;
 
-  // use wordwrap() if lines are longer than 70 characters
-  //$msg = wordwrap($msg,70);
-
-
-      $subject = "Wedding Enq Enquiry";
-     $mailto = "c15708709@mydit.com";
-     $headers = "From: " .$email . '\r\n' . "CC: ericstrong89@gmail.com";
-     mail($mailto, $subject, $msg, $headers);
-
-
-  // send email
-  //mail("strong.erik@gmail.com","Wedding Enquiry - " .$name. " " .$date ,$msg,$headers);
 }
 }
 
