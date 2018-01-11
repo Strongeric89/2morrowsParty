@@ -61,7 +61,10 @@ include 'db/database.php';
 
   <body>
 
+
     <div class="container">
+
+           <br>
 
       <header class="header clearfix" id="whiteBlock">
         <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
@@ -294,7 +297,7 @@ include 'db/database.php';
 
       <?php
           //the following is to produce a testamonial on the index page
-          $query1 = "SELECT * FROM testamonials ORDER BY RAND() limit 0,4; ";
+          $query1 = "SELECT * FROM testamonials ORDER BY RAND() limit 0,5; ";
 
           $run = $mysqli->query($query1);
           while ($row = $run->fetch_array()) {
@@ -315,6 +318,7 @@ include 'db/database.php';
 
         </ul>
       </div>
+      <br>
 
             ';
           }
@@ -328,7 +332,7 @@ include 'db/database.php';
 
     </div>
 
-          <div class="col-lg-7" id="whiteBlock">
+          <div class="col-lg-7" id="whiteBlock" style="margin-left:3%;">
             <h4>Promo Video</h4>
             <div>
               <p>Check out our Promo Video. You will not be disapointed</p>
@@ -336,10 +340,18 @@ include 'db/database.php';
 
             </div>
 
-            <div >
+            <div>
               <h4>another cool video</h4>
               <p>college gigs and shit</p>
               <iframe width="98%" height="500px" src="https://www.youtube.com/embed/IThGXN1k9ww?start=10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </div>
+
+            <div>
+              <h4>some other mad video</h4>
+              <p>show different types of genre</p>
+
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/dPk1mgmNeiY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
             </div>
 
@@ -349,12 +361,7 @@ include 'db/database.php';
 
         </div>
 
-
-
-
-
-
-
+        <br>
 
 
     </div> <!-- /container -->
