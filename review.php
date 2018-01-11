@@ -13,14 +13,13 @@ include 'db/database.php';
     <meta name="author" content="">
 
 
-    <title>2morrows Party - Testamonials </title>
+    <title>2morrows Party - Review </title>
 
 
 
     <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
- <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
  <!--jquery-->
  <script src="js/jquery.js"></script>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,6 +27,7 @@ include 'db/database.php';
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
     <script src="js/myscripts.js"></script>
+      <script src="js/validateForm.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -39,9 +39,12 @@ include 'db/database.php';
 
 
 
+
+
+
     <style>
       .jumbotron {
-         background-image: url('images/sp8.png');
+        background-image: url('images/sp2.png');
         height:500px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -92,66 +95,41 @@ include 'db/database.php';
 
         <div class="jumbotron">
           <div class="cont">
-            <h1 class="display-3">Testamonials</h1>
-            <p class="lead">We Pride ourselfs on our work. Check out what other people have had to say </p>
-            <p><a class="btn btn-primary" href="review.php" role="button">Leave a Review
-            </a></p>
+
 
           </div>
           </div>
-
-
-
-
-
-
-
 
 
         <div class="row marketing">
 
           <div class="col-lg-12">
-            <h4>Testamonials</h4>
+            <h4>Leave a Review</h4>
+
+<form name="myform" id="myform" action="review.php" method="post" onsubmit="return validate();">
 
 
 
-      <?php
-          //the following is to produce a testamonial on the index page
-          $query1 = "SELECT customer, message, date FROM testamonials ORDER BY date desc; ";
-          $run = $mysqli->query($query1);
-          while ($row = $run->fetch_array()) {
+  <div class="form-group">
+    <label for="date">Date</label>
+      <input class="form-control" type="date" id="pickdate" size="8" name="date" required>
+         </div>
 
-              $message = $row['message'];
-              $customer = $row['customer'];
-              $date = $row['date'];
-
-              echo '
-
-              <div class="card" style="width: 100%;">
-        <div class="card-header">
-        <i class="fa fa-smile-o" aria-hidden="true"></i>   Review by: '.$customer.'
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Wedding Date: '.$date.'</li>
-          <li class="list-group-item">'.$message.'</li>
-
-        </ul>
-      </div>
-      <br>
-            ';
-          }
+ <div class="form-group">
+    <label for="reviewby">Review by</label>
+    <input class="form-control" id="reviewby" name="reviewby" required></textarea>
+  </div>
 
 
+  <div class="form-group">
+     <label for="review">Review</label>
+     <textarea class="form-control" id="review" rows="3" name="review" required></textarea>
+   </div>
 
-       ?>
+  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+</form>
 
-
-
-            </div>
-
-
-
-
+</div>
         </div>
 
 
@@ -174,3 +152,27 @@ include 'db/database.php';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+  if(isset($_POST['submit'])){
+    $date = $_POST['date'];
+    $reviewby = $_POST['reviewby'];
+    $review = $_POST['review'];
+
+    $query2 = "INSERT INTO testamonials (message,customer,date) VALUES ('$review','$reviewby','$date'); ";
+    $run = $mysqli->query($query2);
+
+    if($run != 0){
+        echo '
+          <script>alert("Thank you for your review!");</script>
+        ';
+    }else{
+      echo '
+        <script>alert("Something went wrong!");</script>
+      ';
+
+    }
+
+  }
+
+ ?>
