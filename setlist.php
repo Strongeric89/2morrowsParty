@@ -66,14 +66,14 @@ include 'db/database.php';
 
     <div class="container">
 
-      <header class="header clearfix" id="whiteBlock">
-        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
-        <nav>
-          <ul class="nav nav-pills float-right">
+      <header class="header clearfix">
+          <img src="images/2mp.png" id="img">
+              <nav id="whiteBlock">
+          <ul class="nav nav-pills ">
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home </a>
             </li>
-            <li class="nav-item  ">
+            <li class="nav-item">
               <a class="nav-link" href="testamonials.php">Testamonials</a>
             </li>
 
@@ -92,7 +92,7 @@ include 'db/database.php';
 
 
 
-        <div class="jumbotron" >
+        <div class="jumbo" >
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
@@ -202,7 +202,7 @@ include 'db/database.php';
   <footer class="footer">
 
     <nav>
-      <ul class="nav nav-pills float-right">
+      <ul class="nav nav-pills">
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
@@ -223,7 +223,7 @@ include 'db/database.php';
 
     <br>
 
-<b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
+<b><p>2morrow's Party 2017 | by Eric Strong</p></b>
 
 
     <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>

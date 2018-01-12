@@ -64,10 +64,10 @@ include 'db/database.php';
 
     <div class="container">
 
-      <header class="header clearfix" id="whiteBlock">
-        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
-        <nav>
-          <ul class="nav nav-pills float-right">
+      <header class="header clearfix">
+        <img src="images/2mp.png" id="img">
+        <nav id="whiteBlock">
+          <ul class="nav nav-pills" >
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home </a>
             </li>
@@ -90,7 +90,7 @@ include 'db/database.php';
 
 
 
-        <div class="jumbotron" >
+        <div class="jumbo" >
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
@@ -158,7 +158,7 @@ include 'db/database.php';
     <footer class="footer">
 
       <nav>
-        <ul class="nav nav-pills float-right">
+        <ul class="nav nav-pills">
           <li class="nav-item">
             <a class="nav-link" href="index.php">Home </a>
           </li>
@@ -179,7 +179,7 @@ include 'db/database.php';
 
       <br>
 
- <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
+ <b><p>2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
         <a href="#"><i class="fa fa-snapchat"></i></a>
@@ -204,18 +204,31 @@ include 'db/database.php';
 
 if(isset($_POST['submit'])){
 
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $number = $_POST['number'];
-  $date = $_POST['date'];
-  $venue = $_POST['venue'];
-  $query = $_POST['query'];
+  $name = sanitize($_POST['name']);
+  $email = sanitize($_POST['email']);
+  $number = sanitize($_POST['number']);
+  $date = sanitize($_POST['date']);
+  $venue = sanitize($_POST['venue']);
+  $query = sanitize($_POST['query']);
+
+
+
+  //insert with prepared statement
+  // prepared statement - insert
+  $query3 = "INSERT INTO queries (name,email,phone,date,venue,query) VALUES (?,?,?,?,?,?); ";
+  $stmt = $mysqli->prepare($query3);
+  $stmt->bind_param("ssssss",$name,$email,$number,$date,$venue,$query);
+  $stmt->execute();
+  print $stmt->error;
+  $stmt->close();
+
+
 
   //insert into db
-  $query3 = "INSERT INTO queries (name,email,phone,date,venue,query) VALUES ('$name','$email','$number','$date','$venue','$query'); ";
-  $run = $mysqli->query($query3);
+  // $query3 = "INSERT INTO queries (name,email,phone,date,venue,query) VALUES ('$name','$email','$number','$date','$venue','$query'); ";
+  // $run = $mysqli->query($query3);
 
-  if($run != 0){
+  if($stmt != 0){
 
     $msg = "Wedding Enquiry from 2mp Website\nName:" .$name . "\nEmail:" .$email. "\nPhone Number:"
      .$number. "\nWedding Date: " .$date. "\nVenue:" .$venue. "\nQuery:" .$query ;
@@ -238,9 +251,21 @@ if(isset($_POST['submit'])){
     ';
 
 
-  //function mail()
-
 }
+}
+
+
+
+function sanitize($str){
+  //clear white space
+  $str = trim($str);
+  //strip any slashes to preven sql injection
+  $str = stripslashes($str);
+  //prevent crosssite scripting
+  $str = htmlspecialchars($str);
+
+  return $str;
+
 }
 
 

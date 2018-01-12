@@ -51,6 +51,8 @@ include 'db/database.php';
 
   }
 
+
+
       /* Add a gray background color and some padding to the footer */
       footer {
         background-color: #f2f2f2;
@@ -66,17 +68,15 @@ include 'db/database.php';
 
     <div class="container">
 
-           <br>
+      <header class="header clearfix" >
 
-      <header class="header clearfix" id="whiteBlock">
-        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
-
+        <img src="images/2mp.png" id="img">
 
 
-        <nav>
-          <ul class="nav nav-pills float-right">
+        <nav id="whiteBlock">
+          <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link active" href="#">Home </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testamonials.php">Testamonials</a>
@@ -91,17 +91,9 @@ include 'db/database.php';
           </ul>
 
         </nav>
-
-
-
       </header>
 
-
-
-
-
-
-        <div class="jumbotron" >
+        <div class="jumbo" >
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
@@ -140,7 +132,7 @@ include 'db/database.php';
 
              ?>
 
-            <br><br>
+            <br>
 
           </div>
 
@@ -236,7 +228,6 @@ include 'db/database.php';
             </a>
           </div>
               </main>
-              <br>
 
 
 
@@ -261,11 +252,6 @@ include 'db/database.php';
 
               </div>
 
-
-
-
-
-          <br>
 
           <div class="row marketing" >
 
@@ -344,7 +330,6 @@ include 'db/database.php';
 
           </div>
 
-          <br>
 
 
 
@@ -426,16 +411,17 @@ include 'db/database.php';
 
         </div>
 
-        <br>
+
+
+
+
 
 
     </div> <!-- /container -->
 
-
-
     <footer class="footer">
       <nav>
-        <ul class="nav nav-pills float-right">
+        <ul class="nav nav-pills">
           <li class="nav-item">
             <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
@@ -457,7 +443,7 @@ include 'db/database.php';
       <br>
 
 
- <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
+ <b><p>2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube fa-6"></i></a>
         <a href="#"><i class="fa fa-snapchat"></i></a>
@@ -467,5 +453,9 @@ include 'db/database.php';
 
 
     </footer>
+
+
+
+
   </body>
 </html>

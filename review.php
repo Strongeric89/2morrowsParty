@@ -67,14 +67,15 @@
 
      <div class="container">
 
-       <header class="header clearfix" id="whiteBlock">
-         <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
-         <nav>
-           <ul class="nav nav-pills float-right">
+       <header class="header clearfix">
+             <img src="images/2mp.png" id="img">
+        <nav id="whiteBlock">
+
+           <ul class="nav nav-pills ">
              <li class="nav-item">
                <a class="nav-link" href="index.php">Home </a>
              </li>
-             <li class="nav-item active ">
+             <li class="nav-item active">
                <a class="nav-link" href="testamonials.php">Testamonials <span class="sr-only">(current)</span></a>
              </li>
 
@@ -93,7 +94,7 @@
 
 
 
-         <div class="jumbotron" >
+         <div class="jumbo" >
            <div class="cont" id="whiteBlock" width="30%" height="50%">
              <h1 class="display-3">Sale Now On!</h1>
              <p class="lead">Free DJ with every booking, when booked this month</p>
@@ -144,7 +145,7 @@
      <footer class="footer">
 
        <nav>
-         <ul class="nav nav-pills float-right">
+         <ul class="nav nav-pills">
            <li class="nav-item">
              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
            </li>
@@ -165,7 +166,7 @@
 
        <br>
 
-  <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
+  <b><p> 2morrow's Party 2017 | by Eric Strong</p></b>
        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
          <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
          <a href="#"><i class="fa fa-snapchat"></i></a>
@@ -185,14 +186,22 @@
 
  <?php
    if(isset($_POST['submit'])){
-     $date = $_POST['date'];
-     $reviewby = $_POST['reviewby'];
-     $review = $_POST['review'];
+     $date = sanitize($_POST['date']);
+     // $date = date("Y-m-d");
+     $reviewby = sanitize($_POST['reviewby']);
+     $review = sanitize($_POST['review']);
 
-     $query2 = "INSERT INTO testamonials (message,customer,date) VALUES ('$review','$reviewby','$date'); ";
-     $run = $mysqli->query($query2);
+     //insert with prepared statement
+     // prepared statement - insert
+     $query2 = "INSERT INTO testamonials (message,customer,date) VALUES (?,?,?); ";
+     $stmt = $mysqli->prepare($query2);
+     $stmt->bind_param("sss",$review,$reviewby,$date);
+     $stmt->execute();
+     print $stmt->error;
+     $stmt->close();
 
-     if($run != 0){
+
+     if($stmt != 0){
          echo '
            <script>alert("Thank you for your review!");</script>
 
@@ -205,6 +214,18 @@
        ';
 
      }
+
+   }
+
+   function sanitize($str){
+     //clear white space
+     $str = trim($str);
+     //strip any slashes to preven sql injection
+     $str = stripslashes($str);
+     //prevent crosssite scripting
+     $str = htmlspecialchars($str);
+
+     return $str;
 
    }
 

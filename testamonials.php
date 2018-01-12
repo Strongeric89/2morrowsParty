@@ -65,15 +65,16 @@ include 'db/database.php';
 
     <div class="container">
 
-      <header class="header clearfix" id="whiteBlock">
-        <br>    <br><br><br><br>    <br>    <br><br><br><br>    <br><br><br><br>    <br>    <br><br><br><br>
-        <nav>
-          <ul class="nav nav-pills float-right">
+      <header class="header clearfix">
+          <img src="images/2mp.png" id="img">
+          <nav id="whiteBlock">
+          <ul class="nav nav-pills">
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home </a>
             </li>
-            <li class="nav-item active ">
-              <a class="nav-link" href="testamonials.php">Testamonials <span class="sr-only">(current)</span></a>
+
+            <li class="nav-item active">
+              <a class="nav-link " href="testamonials.php">Testamonials <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
@@ -91,7 +92,7 @@ include 'db/database.php';
 
 
 
-        <div class="jumbotron" >
+        <div class="jumbo" >
           <div class="cont" id="whiteBlock" width="30%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
@@ -145,6 +146,8 @@ include 'db/database.php';
 
 
               <?php
+          
+
                   //the following is to produce a testamonial on the index page
                   $query1 = "SELECT customer, message, date FROM testamonials ORDER BY date desc; ";
                   $run = $mysqli->query($query1);
@@ -197,34 +200,28 @@ include 'db/database.php';
   </div>
 </div>
 
-    <footer class="footer">
+<footer class="footer">
+  <nav>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
 
-      <nav>
-        <ul class="nav nav-pills float-right">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">Home </a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="testamonials.php">Testamonials</a>
+      </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" href="testamonials.php">Testamonials</a>
-          </li>
+      <li class="nav-item">
+        <a class="nav-link" href="setlist.php">Setlist</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact.php">Contact</a>
+      </li>
+    </ul>
 
-          <li class="nav-item">
-            <a class="nav-link" href="setlist.php">Setlist</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
-          </li>
+  </nav>
 
-
-            </div>
-
-
-        </ul>
-
-      </nav>
-
-      <br>
+  <br>
  <b><p>&copy; 2morrow's Party 2017 | by Eric Strong</p></b>
       <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
         <a href="https://www.youtube.com/channel/UCLa1uSkCAIthzuvWegJxrwA"><i class="fa fa-youtube"></i></a>
