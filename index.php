@@ -109,7 +109,7 @@ include 'db/database.php';
 
             <i class="fa fa-calendar-o" aria-hidden="true"></i><h1>Our Next Showcase</h1>
             <?php
-            $query1 = "SELECT * FROM shows ORDER BY date LIMIT 1 ; ";
+            $query1 = "SELECT * FROM shows WHERE date > sysdate() ORDER BY date LIMIT 1 ; ";
             $run = $mysqli->query($query1);
             while ($row = $run->fetch_array()) {
 
