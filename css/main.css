@@ -9,8 +9,8 @@ body{
     background-repeat: no-repeat;
     margin:2% !important;
 
-
 }
+
 
 .icons{
   font-size: 32px;
@@ -31,8 +31,8 @@ height:50%;
 
     width: 100% !important;
     max-width:100% !important;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 2%;
+    padding-left: 2%;
     margin-top:2% !important;
     background-image: url(../images/topbg.jpg);
 
@@ -42,11 +42,11 @@ height:50%;
 #whiteBlock{
   margin: 15px;
   padding:5%;
-      background-color: #ffffff;
+background-color: #ffffff;
       color:black;
       font-weight: bold;
   color: #000000;
-    opacity:0.9;
+    opacity:0.95;
       text-align: center;
 
 }
@@ -72,25 +72,23 @@ height:50%;
 
 }
 
-#videoBlock{
-  margin-bottom: 10%;
-
+#myCarousel{
+  width:100% !important;
 }
 
 .nav{
+  margin-left: 15%;
   text-align: center;
   margin-top:1%;
   font-size: 32px;
-
-
+   padding : 0 25px;
 
 }
 
 .nav a{
-  color:gold;
+  color:#a88e01;
+
 }
-
-
 
 .footer{
   text-align: center;
@@ -100,19 +98,13 @@ height:50%;
     width:100%;
 
 }
-
-
-
 .bio{
   text-align: justify;
   font-size: 20px;
   font-style: italic;
   padding: 5%;
-  margin:1px !important;
+
 }
-
-
-
 .jumbo .cont {
   color:red;
   font-size: 20px;
@@ -120,9 +112,13 @@ height:50%;
   position:relative;
   text-align: center;
   background-image: url(../images/music6.gif);
-
   background-position:bottom center;
     background-repeat: no-repeat;
 
 
+}
+
+
+form{
+  background-image: url(../images/stars.png);
 }

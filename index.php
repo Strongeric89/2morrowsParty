@@ -39,19 +39,13 @@ include 'db/database.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
     <style>
-      /* Remove the navbar's default margin-bottom and rounded borders */
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
 
-      }
       .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
       width: 100%;
 
+
   }
-
-
 
       /* Add a gray background color and some padding to the footer */
       footer {
@@ -65,6 +59,15 @@ include 'db/database.php';
 
   <body>
 
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 
     <div class="container">
 
@@ -73,7 +76,7 @@ include 'db/database.php';
         <img src="images/2mp.png" id="img">
 
 
-        <nav id="whiteBlock">
+        <nav id="whiteBlock" >
           <ul class="nav nav-pills">
             <li class="nav-item">
               <a class="nav-link active" href="#">Home </a>
@@ -94,7 +97,7 @@ include 'db/database.php';
       </header>
 
         <div class="jumbo" >
-          <div class="cont" id="whiteBlock" width="30%" height="50%">
+          <div class="cont" id="whiteBlock" width="100%" height="50%">
             <h1 class="display-3">Sale Now On!</h1>
             <p class="lead">Free DJ with every booking, when booked this month</p>
             <p><a class="btn btn-primary" href="contact.php" role="button">Enquire Now</a></p>
@@ -102,7 +105,7 @@ include 'db/database.php';
           </div>
           </div>
 
-          <div class="bio" id="whiteBlock">
+          <div class="bio" id="whiteBlock" >
 
             <i class="fa fa-calendar-o" aria-hidden="true"></i><h1>Our Next Showcase</h1>
             <?php
@@ -122,7 +125,7 @@ include 'db/database.php';
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Where: '.$location.'</li>
-            <li class="list-group-item">When: '.$date.' Time: '.$time.':00</li>
+            <li class="list-group-item">When: '.$date.' Time: '.$time.':00 PM</li>
           </ul>
         </div>
         <br>
@@ -136,7 +139,7 @@ include 'db/database.php';
 
           </div>
 
-          <main role="main" id="whiteBlock">
+          <main role="main" id="whiteBlock" >
 
 
           <section class="row text-center placeholders" id="whiteBlock">
@@ -250,10 +253,12 @@ include 'db/database.php';
 
                 2morrows Party is a professional Wedding Band that has been part of the Wedding Bands industry for seven years specialising in 80s, 90s, Dance, Pop, Country, Rock, Hip Hop, Funk and Current music for weddings and corporate events. .</p>
 
+
+                  <div class="fb-like" data-href="https://facebook.com/2morrowsparty" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
               </div>
 
 
-          <div class="row marketing" >
+          <div class="row marketing" style="margin-left:1px;" >
 
             <div class="col-lg-4"  id="whiteBlock">
 
@@ -276,7 +281,7 @@ include 'db/database.php';
 
         <?php
             //the following is to produce a upcomming shows on the index page
-            $query1 = "SELECT * FROM shows ORDER BY date ; ";
+            $query1 = "SELECT * FROM shows WHERE date > sysdate() ORDER BY date ; ";
             $run = $mysqli->query($query1);
             while ($row = $run->fetch_array()) {
 
@@ -304,7 +309,7 @@ include 'db/database.php';
               </div>
 
 
-            <div class="col-lg-4"  id="whiteBlock">
+            <div class="col-lg-4"  id="whiteBlock" >
 
               <i class="fa fa-phone" aria-hidden="true"></i>
                   <h4>Get in Touch</h4>
@@ -313,16 +318,25 @@ include 'db/database.php';
     <div class="card" style="width: 100%;">
   <img class="card-img-top" src="images/sp2.png"  alt="image">
   <div class="card-body">
-    <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i> Email: 2morrowsparty@gmail.com </i></a></h5>
-    <hr>
+    <a href="mailto:2morrowsparty@gmail.com?Subject=Enquiry">
+  <h5 class="card-title"><i class="fa fa-envelope" aria-hidden="true"></i> Email: 2morrowsparty@gmail.com </i></a></h5>
+  </a>  <hr>
 
   <h5 class="card-title"><i class="fa fa-phone" aria-hidden="true">  Phone: 085000000</i></h5>
 <hr>
 
-<h5 class="card-title">        <a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
- Facebook</h5>
+<h5 class="card-title"><a href="https://www.facebook.com/2morrowsParty"><i class="fa fa-facebook"></i></a>
+ Facebook.com/2morrowsparty</h5>
+
+
+
 <hr>
+
+
   </div>
+<div class="fb-like" data-href="https://facebook.com/2morrowsparty" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+<br>
+
 </div>
 
               </div>
@@ -333,7 +347,7 @@ include 'db/database.php';
 
 
 
-        <div class="row marketing">
+        <div class="row marketing" style="margin-left:5px;">
 
           <div class="col-lg-4" id="whiteBlock">
 
@@ -343,7 +357,7 @@ include 'db/database.php';
 
       <?php
           //the following is to produce a testamonial on the index page
-          $query1 = "SELECT * FROM testamonials ORDER BY RAND() limit 0,5; ";
+          $query1 = "SELECT * FROM testamonials WHERE display = 1 ORDER BY RAND() limit 0,5; ";
 
           $run = $mysqli->query($query1);
           while ($row = $run->fetch_array()) {

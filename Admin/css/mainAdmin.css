@@ -1,0 +1,30 @@
+*{
+  font-family: monospace;
+}
+
+
+body{
+    background-image: url(../images/music6.gif);
+    background-position:bottom center;
+    background-repeat: no-repeat;
+    margin:3% !important;
+
+}
+
+.tablePanel{
+
+  background-image: url(../images/bg1.png);
+}
+
+
+
+table{
+  margin-bottom: 30%;
+}
+
+td:hover{
+  color:#a88e01;
+  background-color: #ffffff;;
+
+
+}

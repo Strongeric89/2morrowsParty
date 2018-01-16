@@ -38,19 +38,8 @@ include 'db/database.php';
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
     <style>
-      /* Remove the navbar's default margin-bottom and rounded borders */
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
 
-      }
-      .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
 
-  }
-
-      /* Add a gray background color and some padding to the footer */
       footer {
         background-color: #f2f2f2;
         padding: 25px;
@@ -148,6 +137,7 @@ include 'db/database.php';
                 </div>
 
               </div>
+
 
 
 

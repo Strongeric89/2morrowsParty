@@ -146,10 +146,10 @@ include 'db/database.php';
 
 
               <?php
-          
+
 
                   //the following is to produce a testamonial on the index page
-                  $query1 = "SELECT customer, message, date FROM testamonials ORDER BY date desc; ";
+                  $query1 = "SELECT customer, message, date FROM testamonials WHERE display = 1 ORDER BY date desc; ";
                   $run = $mysqli->query($query1);
                   while ($row = $run->fetch_array()) {
 
