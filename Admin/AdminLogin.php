@@ -24,9 +24,9 @@ session_start();
 	<div id="container">
 
 		<div id="mainBanner">
-			<div id="banner">(ADMIN)</div>
+
 			<div id="bannerLogo">
-				<img src="../images/2mp.png" alt="logo" width=150 height=100>
+
 			</div>
 
 		</div>
@@ -35,6 +35,7 @@ session_start();
 		<div id="maincontentAbout">
 
 			<div id="aboutUs2" style="margin-left:40%;">
+					<img src="../images/2mp.png" alt="logo" width=250 height=100>
 
 				<h1>Admin Login</h1>
 

@@ -166,6 +166,7 @@ include 'db/database.php';
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Wedding Date: '.$date.'</li>
                   <li class="list-group-item">'.$message.'</li>
+                              <li class="list-group-item">    <img src="images/5stars.png" alt="2mp" width="100%" ></li>
 
                 </ul>
               </div>
