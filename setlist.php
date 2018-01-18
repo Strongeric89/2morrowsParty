@@ -141,7 +141,7 @@ include 'db/database.php';
 
       <?php
 
-      $query1 = "SELECT * FROM setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+      $query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
       $run = $mysqli->query($query1);
       while ($row = $run->fetch_array()) {
 
@@ -210,7 +210,7 @@ Your browser does not support the audio element.
 
       <?php
 
-      $query1 = "SELECT * FROM setlist WHERE category = 'pub' ORDER BY preview DESC ; ";
+      $query1 = "SELECT * FROM Setlist WHERE category = 'pub' ORDER BY preview DESC ; ";
       $run = $mysqli->query($query1);
       while ($row = $run->fetch_array()) {
 
