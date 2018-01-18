@@ -52,6 +52,13 @@ include 'db/database.php';
 
   }
 
+  td:hover{
+    color:#a88e01;
+    background-color: #ffffff;;
+
+
+  }
+
       /* Add a gray background color and some padding to the footer */
       footer {
         background-color: #f2f2f2;
@@ -102,89 +109,149 @@ include 'db/database.php';
           </div>
 
 
+
+
+
+
 <div class="row marketing">
 
 
-          <div class="col-md-4" id="whiteBlock">
-            <h2>Wedding Set</h2>
+          <div class="col-md-11" id="whiteBlock" style="margin:3%; padding:3%; ">
+
+            <img src="images/sp2.png" width="50%;" >
+            <br><br>
             <div class="card" style="width: 100%">
-              <img class="card-img-top" src="images/sp1.png" alt="Card image cap">
               <div class="card-block">
-                <h4 class="card-title">Rock set</h4>
-                <p class="card-text">  <p> <ol>
-                    <li>I Feel Good - James Brown</li>
-                    <li>Blame it on the boogie</li>
-                    <li>Chic Mix</li>
-                    <li>Cheap thrills/good feelings</li>
-                    <li>Twist n shout/do ya love me/la bamba</li>
-                    <li>Ain’t no Mountain</li>
-                    <li>Im so excited
-                </li>
-                    <li>    Lady marmalade</li>
-                    <li>Shout</li>
-                    <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                    <li>Proud Mary </li>
+
+                <p class="card-text">
+                   <p>
+                    <h2>Wedding Set</h2>
+
+
+                    <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Title</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Preview</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <?php
+
+      $query1 = "SELECT * FROM setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+      $run = $mysqli->query($query1);
+      while ($row = $run->fetch_array()) {
+
+          $id= $row['id'];
+          $title = $row['title'];
+          $artist= $row['artist'];
+            $preview= $row['preview'];
+
+          echo '
+
+          <tr>
+
+            <td>'.$title.'</td>
+            <td>'.$artist.'</td>
+
+            ';
+            if($preview == 1){
+              echo '  <td>
+
+              <audio controls>
+<source src="audio/'.$title.'.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+              </td>';
+            }
+
+            echo'</tr>';
+      }
+       ?>
+
+    </tbody>
+  </table>
+
+
                     <br>
-                  </ol>  <a href="#" class="btn btn-primary">Preview</a>
-                  <br><br>
+
               </div>
             </div>
 
 
           </div>
 
-          <div class="col-md-3" id="whiteBlock">
-            <h2>Pub Set</h2>
+          <div class="col-md-11" id="whiteBlock" style="margin:3%; padding:3%; ">
+
+            <img src="images/sp4.jpg" width="50%;" >
+            <br><br>
             <div class="card" style="width: 100%">
-              <img class="card-img-top" src="images/sp1.png" alt="Card image cap">
               <div class="card-block">
-                <h4 class="card-title">Pub set</h4>
-                <p class="card-text">  <p> <ol>
-                    <li>I Feel Good - James Brown</li>
-                    <li>Blame it on the boogie</li>
-                    <li>Chic Mix</li>
-                    <li>Cheap thrills/good feelings</li>
-                    <li>Twist n shout/do ya love me/la bamba</li>
-                    <li>Ain’t no Mountain</li>
-                    <li>Im so excited
-                </li>
-                    <li>    Lady marmalade</li>
-                    <li>Shout</li>
-                    <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                    <li>Proud Mary </li>
+
+                <p class="card-text">
+                   <p>
+                    <h2>Pub Set</h2>
+
+
+                    <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Title</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Preview</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <?php
+
+      $query1 = "SELECT * FROM setlist WHERE category = 'pub' ORDER BY preview DESC ; ";
+      $run = $mysqli->query($query1);
+      while ($row = $run->fetch_array()) {
+
+          $id= $row['id'];
+          $title = $row['title'];
+          $artist= $row['artist'];
+            $preview= $row['preview'];
+
+          echo '
+
+          <tr>
+
+            <td>'.$title.'</td>
+            <td>'.$artist.'</td>
+
+            ';
+            if($preview == 1){
+              echo '  <td>
+              <audio controls>
+<source src="audio/'.$title.'.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+              </td>';
+            }
+
+            echo'</tr>';
+      }
+       ?>
+
+    </tbody>
+  </table>
+
+
                     <br>
-                  </ol>  <a href="#" class="btn btn-primary">Preview</a>
-                  <br><br>
+
               </div>
             </div>
 
 
           </div>
-
-          <div class="col-md-4" id="whiteBlock">
-            <h2>Rock Set</h2>
-            <div class="card" style="width: 100%;">
-              <img class="card-img-top" src="images/sp1.png" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Pop set</h4>
-                <p class="card-text">  <p> <ol>
-                    <li>I Feel Good - James Brown</li>
-                    <li>Blame it on the boogie</li>
-                    <li>Chic Mix</li>
-                    <li>Cheap thrills/good feelings</li>
-                    <li>Twist n shout/do ya love me/la bamba</li>
-                    <li>Ain’t no Mountain</li>
-                    <li>Im so excited
-                </li>
-                    <li>    Lady marmalade</li>
-                    <li>Shout</li>
-                    <li>Maniac/Venga boys/everybodys free to feel good/rhythm</li>
-                    <li>Proud Mary </li>
-                    <br>
-                  </ol>  <a href="#" class="btn btn-primary">Preview</a>
-                  <br><br>
-              </div>
-            </div>
 
 
           </div>
