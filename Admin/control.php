@@ -96,6 +96,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
           <td><b>Message</b></td>
           <td><b>Status: showing</b></td>
           <td><b>Update</b></td>
+          <td><b>Delete</b></td>
 
         </tr>
 
@@ -131,6 +132,17 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                                 <p><a class="btn btn-secondary" href="control.php?add_testamony=' . $id . '" role="button">Add to Main&raquo;</a></p>
                       </form>
                     </td>';
+
+
+                    $output .= '<td>
+
+
+
+                              <p><a class="btn btn-secondary" href="control.php?del_testamony=' . $id . '" role="button">Delete</a></p>
+                    </form>
+                  </td>';
+
+
                     $output .= '</tr>';
                     echo $output;
 
@@ -225,7 +237,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                         <?php
                         // display all dates
 
-                        $query1 = "SELECT * FROM shows; ";
+                        $query1 = "SELECT * FROM shows WHERE date > sysdate() ORDER BY date; ";
 
                         $run = $mysqli->query($query1);
                         while ($row = $run->fetch_array()) {
@@ -408,6 +420,31 @@ if (isset($_GET['add_testamony'])) {
       window.open('control.php','_self');
     }
 
+      </script>
+
+    ";
+
+}
+}
+
+
+
+if (isset($_GET['del_testamony'])) {
+   $id = sanitize($_GET['del_testamony']);
+
+
+  $query2 = "DELETE FROM testamonials WHERE id = ? ;";
+  $stmt = $mysqli->prepare($query2);
+  $stmt->bind_param("i",$id);
+  $stmt->execute();
+  print $stmt->error;
+  $stmt->close();
+
+  if($stmt != 0){
+    echo "
+    <script>
+      alert('Testamonial deleted');
+      window.open('control.php','_self');
       </script>
 
     ";
