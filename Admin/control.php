@@ -35,6 +35,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                $('.toggleThis2').hide();
                $('.toggleThis3').hide();
                 $('.toggleThis4').hide();
+                  $('.toggleThis5').hide();
 
                $('#showContents').click(function(){
                 $('.toggleThis').slideToggle(100);
@@ -51,6 +52,10 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
             $('#showContents4').click(function(){
              $('.toggleThis4').slideToggle(100);
            });
+
+           $('#showContents5').click(function(){
+            $('.toggleThis5').slideToggle(100);
+          });
       });
 
 
@@ -136,11 +141,74 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 
                 ?>
 
+                <tr  class="tablePanel" align="center" height="200" id='showContents4'>
+                  <td colspan="9" align="center"><h1 id='showContents4'>Add Date</h1></td>
+                </tr>
+
+                <tr class='toggleThis4'>
+
+                  <td><b>Date</b></td>
+                  <td><b>Location</b></td>
+                  <td><b>Time</b></td>
+                  <td><b>Add</b></td>
+
+
+                </tr>
+
+
+                <tr class='toggleThis4'>
+
+                  <form action="control.php" method="post" id='showContents4' >
+                    <td>  <input type="date" name="date" value="Date"></td>
+                  <td>  <input type="text" name="location" value="" placeholder="Location"></td>
+                  <td>  <input type="time" name="time" value="Time"></td>
+                  <td>  <input type="submit" name="submitDate" value="Add Date"></td>
+
+                  <?php
+                      if(isset($_POST['submitDate'])){
+                        $date = $_POST['date'];
+                        $time = $_POST['time'];
+                        $location = $_POST['location'];
+
+                        $query2 = "INSERT INTO shows (date,location,time) VALUES (?,?,?); ";
+                        $stmt = $mysqli->prepare($query2);
+                        $stmt->bind_param("ssd",$date,$location,$time);
+                        $stmt->execute();
+                        print $stmt->error;
+                        $stmt->close();
+
+
+                        if($stmt != 0){
+                            echo '
+                              <script>alert("New date added");</script>
+
+                            ';
+
+                                echo "<script>window.open('control.php','_self')</script>";
+                        }else{
+                          echo '
+                            <script>alert("Something went wrong!");</script>
+                          ';
+
+                        }
+                      }
+
+
+                   ?>
+
+
+
+
+                  </form>
+
+
+                </tr>
+
 
 
                 <tr class="tablePanel" id='showContents2' align="center" height="200">
 
-                  <td colspan="8" align="center"><h1 id='showContents2'>Display Dates</h1></td>
+                  <td colspan="10" align="center"><h1 id='showContents2'>Display Dates</h1></td>
 
                 </tr>
 
@@ -186,6 +254,91 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 
                         ?>
 
+                        <tr class="tablePanel" id='showContents5' align="center" height="200">
+
+                          <td colspan="9" align="center"><h1 id='showContents5'>Manage Leads</h1></td>
+
+                        </tr>
+
+                        <tr class='toggleThis5'>
+                          <td><b>Id</b></td>
+                          <td><b>Name</b></td>
+                          <td><b>Email</b></td>
+                            <td><b>Phone</b></td>
+                          <td><b>Date</b></td>
+                          <td><b>Venue</b></td>
+                          <td><b>Query</b></td>
+                          <td><b>Status</b></td>
+                            <td><b>Update</b></td>
+
+                        </tr>
+
+                        <tr>
+                                <?php
+                                // display all Testamonials
+
+                                $query1 = "SELECT * FROM queries where status != 'complete' ORDER BY id ; ";
+
+                                $run = $mysqli->query($query1);
+                                while ($row = $run->fetch_array()) {
+                                    $id1 = $row['id'];
+                                    $name = $row['name'];
+                                    $email = $row['email'];
+                                    $phone = $row['phone'];
+                                    $date = $row['date'];
+                                    $venue = $row['venue'];
+                                    $query = $row['query'];
+                                    $status = $row['status'];
+
+
+                                    $output = '<tr class="toggleThis5">';
+                                      $output .= '<td> ' . $id1 . '</td>';
+                                      $output .= '<td>' . $name . '</td>';
+                                      $output .= '<td>' . $email . '</td>';
+                                      $output .= '<td>' . $phone. '</td>';
+                                      $output .= '<td>' . $date . '</td>';
+                                      $output .= '<td>' . $venue . '</td>';
+                                      $output .= '<td>' . $query . '</td>';
+
+
+                                      $output .= '
+                              					<td>
+
+                                        <form id="myform" action="control.php?statusId='.$id1.'" method="post">
+                                            <input name="statusId" value="'.$id1.'" type="hidden">
+
+                                        <select name="newStatus">
+                      				              <option >'.$status.'</option>
+                                            <option value="emailed">Emailed</option>
+                                            <option value="phoned">Phoned</option>
+                                            <option value="booked">Booked</option>
+                                            <option value="lost">Lost</option>
+                                            <option value="follow up">For Follow up</option>
+                                            <option value="complete">Complete</option>
+                                            <option value="pending">Pending</option>
+                              					</select>
+
+                                        </td>
+
+
+                                      ';
+
+                                      $output .= '<td>
+                                          <input name="submitStatus" value="update" type="submit">
+                                            </form>
+
+                                    </td>';
+                                    $output .= '</tr>';
+                                    echo $output;
+
+
+                                } // end query results
+
+
+
+                                ?>
+
+
 
 				<tr  class="tablePanel" align="center" height="200">
 					<td colspan="9" align="center"><a id="addProduct" href="logout2.php"><h1>Logout</h1></a></td>
@@ -203,6 +356,34 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 </html>
 
 <?php
+if (isset($_POST['submitStatus'])) {
+  $id1 = sanitize($_POST['statusId']);
+  $status1 = sanitize($_POST['newStatus']);
+
+
+  $query2 = "UPDATE queries SET status = ? WHERE id = ? ;";
+  $stmt = $mysqli->prepare($query2);
+  $stmt->bind_param("si",$status1,$id1);
+  $stmt->execute();
+  print $stmt->error;
+  $stmt->close();
+
+  if($stmt != 0){
+      echo '
+        <script>alert("Status Updated");</script>
+
+      ';
+
+          echo "<script>window.open('control.php','_self')</script>";
+  }else{
+    echo '
+      <script>alert("Something went wrong!");</script>
+    ';
+
+  }
+}
+
+
 if (isset($_GET['add_testamony'])) {
    $id = sanitize($_GET['add_testamony']);
 

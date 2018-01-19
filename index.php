@@ -297,7 +297,7 @@ include 'db/database.php';
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Where: '.$location.'</li>
-            <li class="list-group-item">When: '.$date.' Time: '.$time.':00</li>
+            <li class="list-group-item">When: '.$date.' Time: '.$time.':00 PM</li>
           </ul>
         </div>
         <br>

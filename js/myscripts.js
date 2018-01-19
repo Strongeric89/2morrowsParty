@@ -1,3 +1,8 @@
+function test(){
+  var d = document.myform.n.d.value;
+  console.log(d);
+  alert(d);
+}
 
 function validateEnquiry(){
 
