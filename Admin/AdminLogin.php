@@ -93,11 +93,6 @@ if (isset($_POST['login'])) {
         print $stmt->error;
         $stmt->close();
 
-
-
-
-
-
     } // end if
     else {
         // get the id to begin the session.

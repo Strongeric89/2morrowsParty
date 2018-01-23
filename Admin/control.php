@@ -79,6 +79,30 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 					<td colspan="9" align="center"><h2>2morrow's Party</h2>
 						<img src="images/music6.gif" alt="logo" height="200px">
 					<h1>Welcome to the Admin Area: <?php echo $_SESSION['name2'];?></h1></td>
+          <h1>Your Last Login was <?php
+
+          $queryLast = "SELECT date FROM logins WHERE successful = 'true' and date < sysdate() ORDER BY date LIMIT 1; ";
+
+          $run = $mysqli->query($queryLast);
+            while ($row = $run->fetch_array()) {
+
+              echo $row['date'];
+            }
+
+           ?></h1>
+
+           <h1>Number of Failed Login Attempts: <?php
+
+           $queryf = "SELECT number FROM logins WHERE successful = 'false'; ";
+
+
+           $result = $mysqli->query($queryf);
+
+           $numResults = mysqli_num_rows($result);
+
+           echo $numResults;
+
+            ?></h1>
 				</tr>
 
 
@@ -103,9 +127,9 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 				<tr>
                 <?php
                 // display all Testamonials
-                
+
                 $query1 = "SELECT * FROM testamonials WHERE display = 0 ORDER BY date DESC; ";
-                
+
                 $run = $mysqli->query($query1);
                 while ($row = $run->fetch_array()) {
                     $id = $row['id'];
@@ -119,7 +143,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                     $output = '<tr class="toggleThis">
 
                           <form action="control.php?test=' . $id . '" method="post">';
-                    
+
                     $output .= '<td name="test" value=' . $id . '> ' . $id . '</td>';
                     $output .= '<td>' . $customer . '</td>';
                     $output .= '<td>' . $date . '</td>';
@@ -132,7 +156,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                                 <p><a class="btn btn-secondary" href="control.php?add_testamony=' . $id . '" role="button">Add to Main&raquo;</a></p>
                       </form>
                     </td>';
-                    
+
                     $output .= '<td>
 
 
@@ -140,16 +164,16 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                               <p><a class="btn btn-secondary" href="control.php?del_testamony=' . $id . '" role="button">Delete</a></p>
                     </form>
                   </td>';
-                    
+
                     $output .= '</tr>';
                     echo $output;
                 } // end query results
-                
+
                 ?>
 
-                
-				
-				
+
+
+
 				<tr class="tablePanel" align="center" height="200"
 					id='showContents4'>
 					<td colspan="9" align="center"><h1 id='showContents4'>Add Date</h1></td>
@@ -180,20 +204,20 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                     $date = $_POST['date'];
                     $time = $_POST['time'];
                     $location = $_POST['location'];
-                    
+
                     $query2 = "INSERT INTO shows (date,location,time) VALUES (?,?,?); ";
                     $stmt = $mysqli->prepare($query2);
                     $stmt->bind_param("ssd", $date, $location, $time);
                     $stmt->execute();
                     print $stmt->error;
                     $stmt->close();
-                    
+
                     if ($stmt != 0) {
                         echo '
                               <script>alert("New date added");</script>
 
                             ';
-                        
+
                         echo "<script>window.open('control.php','_self')</script>";
                     } else {
                         echo '
@@ -201,7 +225,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                           ';
                     }
                 }
-                
+
                 ?>
 
 
@@ -234,33 +258,33 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 				<tr>
                         <?php
                         // display all dates
-                        
+
                         $query1 = "SELECT * FROM shows WHERE date > sysdate() ORDER BY date; ";
-                        
+
                         $run = $mysqli->query($query1);
                         while ($row = $run->fetch_array()) {
                             $id = $row['id'];
                             $date = $row['date'];
                             $location = $row['location'];
                             $time = $row['time'];
-                            
+
                             $output = '<tr class="toggleThis2">
 
                               <form action="control.php?test=' . $id . '" method="post">';
-                            
+
                             $output .= '<td name="test" value=' . $id . '> ' . $id . '</td>';
                             $output .= '<td>' . $date . '</td>';
                             $output .= '<td>' . $location . '</td>';
                             $output .= '<td>' . $time . ':00 PM</td></tr>';
-                            
+
                             echo $output;
                         } // end query results
-                        
+
                         ?>
 
-                        
-				
-				
+
+
+
 				<tr class="tablePanel" id='showContents5' align="center"
 					height="200">
 
@@ -284,9 +308,9 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 				<tr>
                                 <?php
                                 // display all Testamonials
-                                
+
                                 $query1 = "SELECT * FROM queries where status != 'complete' ORDER BY id ; ";
-                                
+
                                 $run = $mysqli->query($query1);
                                 while ($row = $run->fetch_array()) {
                                     $id1 = $row['id'];
@@ -297,7 +321,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                                     $venue = $row['venue'];
                                     $query = $row['query'];
                                     $status = $row['status'];
-                                    
+
                                     $output = '<tr class="toggleThis5">';
                                     $output .= '<td> ' . $id1 . '</td>';
                                     $output .= '<td>' . $name . '</td>';
@@ -306,7 +330,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                                     $output .= '<td>' . $date . '</td>';
                                     $output .= '<td>' . $venue . '</td>';
                                     $output .= '<td>' . $query . '</td>';
-                                    
+
                                     $output .= '
                               					<td>
 
@@ -328,7 +352,7 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 
 
                                       ';
-                                    
+
                                     $output .= '<td>
                                           <input name="submitStatus" value="update" type="submit">
                                             </form>
@@ -337,14 +361,14 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
                                     $output .= '</tr>';
                                     echo $output;
                                 } // end query results
-                                
+
                                 ?>
 
 
 
-				
-				
-				
+
+
+
 				<tr class="tablePanel" align="center" height="200">
 					<td colspan="9" align="center"><a id="addProduct"
 						href="logout2.php"><h1>Logout</h1></a></td>
@@ -365,20 +389,20 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 if (isset($_POST['submitStatus'])) {
     $id1 = sanitize($_POST['statusId']);
     $status1 = sanitize($_POST['newStatus']);
-    
+
     $query2 = "UPDATE queries SET status = ? WHERE id = ? ;";
     $stmt = $mysqli->prepare($query2);
     $stmt->bind_param("si", $status1, $id1);
     $stmt->execute();
     print $stmt->error;
     $stmt->close();
-    
+
     if ($stmt != 0) {
         echo '
         <script>alert("Status Updated");</script>
 
       ';
-        
+
         echo "<script>window.open('control.php','_self')</script>";
     } else {
         echo '
@@ -389,14 +413,14 @@ if (isset($_POST['submitStatus'])) {
 
 if (isset($_GET['add_testamony'])) {
     $id = sanitize($_GET['add_testamony']);
-    
+
     $query2 = "UPDATE testamonials SET display = 1 WHERE id = ? ;";
     $stmt = $mysqli->prepare($query2);
     $stmt->bind_param("i", $id);
     $stmt->execute();
     print $stmt->error;
     $stmt->close();
-    
+
     if ($stmt != 0) {
         echo "
     <script>
@@ -418,14 +442,14 @@ if (isset($_GET['add_testamony'])) {
 
 if (isset($_GET['del_testamony'])) {
     $id = sanitize($_GET['del_testamony']);
-    
+
     $query2 = "DELETE FROM testamonials WHERE id = ? ;";
     $stmt = $mysqli->prepare($query2);
     $stmt->bind_param("i", $id);
     $stmt->execute();
     print $stmt->error;
     $stmt->close();
-    
+
     if ($stmt != 0) {
         echo "
     <script>
@@ -445,7 +469,7 @@ function sanitize($str)
     $str = stripslashes($str);
     // prevent crosssite scripting
     $str = htmlspecialchars($str);
-    
+
     return $str;
 }
 
