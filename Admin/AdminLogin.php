@@ -36,7 +36,7 @@ session_start();
 
 		<div id="maincontentAbout">
 
-			<div id="aboutUs2" style="margin-left:40%;">
+			<div id="aboutUs2" style="margin-left:30%; padding:10%; margin-bottom:20%;">
 					<img src="../images/2mp.png" alt="logo" width=250 height=100>
 
 				<h1>Admin Login</h1>
@@ -125,10 +125,11 @@ if (isset($_POST['login'])) {
 						$msg = "A successfull Log in by " . $username . " has been made on " . $d;
 						$subject = "Successfull Login made to 2morrowsparty.tk ";
 						$mailto = "2morrowsparty@gmail.com";
-						$headers = "From: 2morrowsparty.tk ";
+            $headers = "From: 2morrowsparty@gmail.com" ."\r\n" ;
 						mail($mailto, $subject, $msg, $headers);
             // RELOCATE TO ANOTHER PAGE
-          header('Location: control.php');
+          // header('Location: control.php');
+          echo "<script>window.open('control.php','_self')</script>";
         } // end if
     } // end else
 } // end if

@@ -76,40 +76,47 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 			<table align="center" width="70%" border="2">
 
 				<tr class="tablePanel">
-					<td colspan="9" align="center"><h2>2morrow's Party</h2>
+					<td colspan="9" align="center">
+            	<h1>Welcome to the Admin Area: <?php echo $_SESSION['name2'];?></h1>
+              <h1>Your Last Login was <?php
+
+              $queryLast = "SELECT date FROM logins WHERE successful = 'true' and date < sysdate() ORDER BY date LIMIT 1; ";
+              //$queryLast = "select * from logins where successful = 'true' order by date desc";
+
+              $run = $mysqli->query($queryLast);
+                while ($row = $run->fetch_array()) {
+
+                  echo $row['date'];
+                }
+
+               ?></h1>
+
+               <h1>Number of Failed Login Attempts: <?php
+
+               $queryf = "SELECT number FROM logins WHERE successful = 'false'; ";
+
+
+               $result = $mysqli->query($queryf);
+
+               $numResults = mysqli_num_rows($result);
+
+               echo $numResults;
+
+                ?></h1>
 						<img src="images/music6.gif" alt="logo" height="200px">
-					<h1>Welcome to the Admin Area: <?php echo $_SESSION['name2'];?></h1></td>
-          <h1>Your Last Login was <?php
-
-          $queryLast = "SELECT date FROM logins WHERE successful = 'true' and date < sysdate() ORDER BY date LIMIT 1; ";
-
-          $run = $mysqli->query($queryLast);
-            while ($row = $run->fetch_array()) {
-
-              echo $row['date'];
-            }
-
-           ?></h1>
-
-           <h1>Number of Failed Login Attempts: <?php
-
-           $queryf = "SELECT number FROM logins WHERE successful = 'false'; ";
+              <img src="../images/2mp.png" alt="" width="100%">
 
 
-           $result = $mysqli->query($queryf);
-
-           $numResults = mysqli_num_rows($result);
-
-           echo $numResults;
-
-            ?></h1>
+            </td>
 				</tr>
 
 
 				<tr class="tablePanel" id='showContents' align="center" height="200">
 
 					<td colspan="9" align="center"><h1 id='showContents'>Add
-							Testamonials</h1></td>
+							Testamonials</h1>
+              <img src="../images/tape2.jpg" alt="" width="100%">
+            </td>
 
 				</tr>
 
@@ -176,7 +183,8 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 
 				<tr class="tablePanel" align="center" height="200"
 					id='showContents4'>
-					<td colspan="9" align="center"><h1 id='showContents4'>Add Date</h1></td>
+					<td colspan="9" align="center"><h1 id='showContents4'>Add Date</h1>
+            <img src="../images/tape1.jpg" alt="" width="100%"></td>
 				</tr>
 
 				<tr class='toggleThis4'>
@@ -242,7 +250,9 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 					height="200">
 
 					<td colspan="10" align="center"><h1 id='showContents2'>Display
-							Dates</h1></td>
+							Dates</h1>
+  <img src="../images/tape3.jpg" alt="" width="100%">
+            </td>
 
 				</tr>
 
@@ -288,7 +298,8 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 				<tr class="tablePanel" id='showContents5' align="center"
 					height="200">
 
-					<td colspan="9" align="center"><h1 id='showContents5'>Manage Leads</h1></td>
+					<td colspan="9" align="center"><h1 id='showContents5'>Manage Leads</h1>
+            <img src="../images/tape4.jpg" alt="" width="100%"></td>
 
 				</tr>
 
@@ -371,7 +382,9 @@ if ($ID == 100 or $_SESSION['id'] != 1) {
 
 				<tr class="tablePanel" align="center" height="200">
 					<td colspan="9" align="center"><a id="addProduct"
-						href="logout2.php"><h1>Logout</h1></a></td>
+						href="logout2.php"><h1>Logout</h1></a>
+              <img src="../images/tape5.jpg" alt="" width="100%">
+          </td>
 				</tr>
 
 

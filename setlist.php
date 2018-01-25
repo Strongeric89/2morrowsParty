@@ -79,6 +79,44 @@ footer {
 <link href="https://fonts.googleapis.com/css?family=Lobster"
 	rel="stylesheet">
 
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+	<script type="text/javascript">
+
+	      $(document).ready(function(){
+
+	               $('.toggleThis').hide();
+	               $('.toggleThis2').hide();
+	               $('.toggleThis3').hide();
+	                $('.toggleThis4').hide();
+	                  $('.toggleThis5').hide();
+
+	               $('#showContents').click(function(){
+	                $('.toggleThis').slideToggle(100);
+	              });
+
+	              $('#showContents2').click(function(){
+	               $('.toggleThis2').slideToggle(100);
+	             });
+
+	             $('#showContents3').click(function(){
+	              $('.toggleThis3').slideToggle(100);
+	            });
+
+	            $('#showContents4').click(function(){
+	             $('.toggleThis4').slideToggle(100);
+	           });
+
+	           $('#showContents5').click(function(){
+	            $('.toggleThis5').slideToggle(100);
+	          });
+	      });
+
+
+
+	    </script>
+
 </head>
 
 <body>
@@ -109,14 +147,30 @@ footer {
 
 
 		<div class="jumbo">
-			<div class="cont" id="whiteBlock" width="30%" height="50%">
-				<h1 class="display-3">Sale Now On!</h1>
-				<p class="lead">Free DJ with every booking, when booked this month</p>
-				<p>
+			<div class="cont" id="whiteBlock" width="100%" height="50%">
+
+				<?php
+
+				$query1 = "SELECT * FROM offers WHERE id = (SELECT EXTRACT(MONTH FROM sysdate())) ; ";
+				$run = $mysqli->query($query1);
+				while ($row = $run->fetch_array()) {
+						$offername = $row['offername'];
+						$details = $row['offerdetails'];
+						$days = $row['numberofdaystorun'];
+						$toPrint = '<h1 class="display-3">'.$offername.'</h1>';
+						$toPrint .= '<p class="lead">'.$details.'</p>';
+
+						echo $toPrint;
+					}
+				 ?>
+
+
+				 <p>
 					<a class="btn btn-primary" href="contact.php" role="button">Enquire
 						Now</a>
 				</p>
 
+
 			</div>
 		</div>
 
@@ -125,166 +179,278 @@ footer {
 
 
 
-		<div class="row marketing">
+	<div class="cont" id="whiteBlock" width="100%" height="50%">
+
+		<table class="table" align="center" width="100%" border="2">
 
 
-			<div class="col-md-11" id="whiteBlock"
-				style="margin: 3%; padding: 3%;">
+			<tr class="tablePanel" id='showContents' align="center">
 
-				<img src="images/sp2.png" width="50%;"> <br>
-				<br>
-				<div class="card" style="width: 100%">
-					<div class="card-block">
-
-						<p class="card-text">
-						
-						
-						<p>
-						
-						
-						<h2>Wedding Set</h2>
-
-
-						<table class="table">
-							<thead>
-								<tr>
-									<!-- <th scope="col">#</th> -->
-									<th scope="col">Title</th>
-									<th scope="col">Artist</th>
-									<th scope="col">Preview</th>
-								</tr>
-							</thead>
-							<tbody>
-
-      <?php
-    
-    $query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
-    $run = $mysqli->query($query1);
-    while ($row = $run->fetch_array()) {
-        
-        $id = $row['id'];
-        $title = $row['title'];
-        $artist = $row['artist'];
-        $preview = $row['preview'];
-        
-        echo '
-
-          <tr>
-
-            <td>' . $title . '</td>
-            <td>' . $artist . '</td>
-
-            ';
-        if ($preview == 1) {
-            echo '  <td>
-
-              <audio controls>
-<source src="audio/' . $title . '.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
-              </td>';
-        }
-        
-        echo '</tr>';
-    }
-    ?>
-
-    </tbody>
-						</table>
-
-
-						<br>
-
-					</div>
-				</div>
-
-
-			</div>
-
-			<div class="col-md-11" id="whiteBlock"
-				style="margin: 3%; padding: 3%;">
-
-				<img src="images/sp4.jpg" width="50%;"> <br>
-				<br>
-				<div class="card" style="width: 100%">
-					<div class="card-block">
-
-						<p class="card-text">
-						
-						
-						<p>
-						
-						
-						<h2>Pub Set</h2>
-
-
-						<table class="table">
-							<thead>
-								<tr>
-									<!-- <th scope="col">#</th> -->
-									<th scope="col">Title</th>
-									<th scope="col">Artist</th>
-									<th scope="col">Preview</th>
-								</tr>
-							</thead>
-							<tbody>
-
-      <?php
-    
-    $query1 = "SELECT * FROM Setlist WHERE category = 'pub' ORDER BY preview DESC ; ";
-    $run = $mysqli->query($query1);
-    while ($row = $run->fetch_array()) {
-        
-        $id = $row['id'];
-        $title = $row['title'];
-        $artist = $row['artist'];
-        $preview = $row['preview'];
-        
-        echo '
-
-          <tr>
-
-            <td>' . $title . '</td>
-            <td>' . $artist . '</td>
-
-            ';
-        if ($preview == 1) {
-            echo '  <td>
-              <audio controls>
-<source src="audio/' . $title . '.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
-              </td>';
-        }
-        
-        echo '</tr>';
-    }
-    ?>
-
-    </tbody>
-						</table>
-
-
-						<br>
-
-					</div>
-				</div>
-
-
-			</div>
-
-
-		</div>
+				<td colspan="9" align="center" height=500>
+						<h1 id='showContents'>Funky Tunes</h1>
+					<img src="images/tape2.jpg" alt="" width="100%">
+					</td>
 
 
 
+			</tr>
+
+			<tr class='toggleThis'>
+				<th scope="col">Title</th>
+				<th scope="col">Artist</th>
+				<th scope="col">Preview</th>
+			</tr>
+
+			<?php
+
+			$query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+			$run = $mysqli->query($query1);
+			while ($row = $run->fetch_array()) {
+
+			  $id = $row['id'];
+			  $title = $row['title'];
+			  $artist = $row['artist'];
+			  $preview = $row['preview'];
+
+			  echo '
+
+			    <tr class="toggleThis">
+
+			      <td>' . $title . '</td>
+			      <td>' . $artist . '</td>
+
+			      ';
+			  if ($preview == 1) {
+			      echo '  <td>
+
+			        <audio controls>
+			<source src="audio/' . $title . '.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+
+			        </td>';
+			  }
+
+			  echo '</tr>';
+			}
+			?>
+
+
+			<tr class="tablePanel" id='showContents2' align="center">
+
+				<td colspan="9" align="center" height=500>
+						<h1 id='showContents2'>Rock Tunes</h1>
+					<img src="images/tape1.jpg" alt="" width="100%">
+					</td>
+
+
+
+			</tr>
+
+			<tr class='toggleThis2'>
+				<th scope="col">Title</th>
+				<th scope="col">Artist</th>
+				<th scope="col">Preview</th>
+			</tr>
+
+			<?php
+
+			$query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+			$run = $mysqli->query($query1);
+			while ($row = $run->fetch_array()) {
+
+			  $id = $row['id'];
+			  $title = $row['title'];
+			  $artist = $row['artist'];
+			  $preview = $row['preview'];
+
+			  echo '
+
+			    <tr class="toggleThis2">
+
+			      <td>' . $title . '</td>
+			      <td>' . $artist . '</td>
+
+			      ';
+			  if ($preview == 1) {
+			      echo '  <td>
+
+			        <audio controls>
+			<source src="audio/' . $title . '.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+
+			        </td>';
+			  }
+
+			  echo '</tr>';
+			}
+			?>
+
+			<tr class="tablePanel" id='showContents3' align="center">
+
+				<td colspan="9" align="center" height=500>
+						<h1 id='showContents3'>Dance Tunes</h1>
+					<img src="images/tape3.jpg" alt="" width="100%">
+					</td>
+
+
+
+			</tr>
+
+			<tr class='toggleThis3'>
+				<th scope="col">Title</th>
+				<th scope="col">Artist</th>
+				<th scope="col">Preview</th>
+			</tr>
+
+			<?php
+
+			$query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+			$run = $mysqli->query($query1);
+			while ($row = $run->fetch_array()) {
+
+			  $id = $row['id'];
+			  $title = $row['title'];
+			  $artist = $row['artist'];
+			  $preview = $row['preview'];
+
+			  echo '
+
+			    <tr class="toggleThis3">
+
+			      <td>' . $title . '</td>
+			      <td>' . $artist . '</td>
+
+			      ';
+			  if ($preview == 1) {
+			      echo '  <td>
+
+			        <audio controls>
+			<source src="audio/' . $title . '.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+
+			        </td>';
+			  }
+
+			  echo '</tr>';
+			}
+			?>
+
+			<tr class="tablePanel" id='showContents4' align="center">
+
+				<td colspan="9" align="center" height=500>
+						<h1 id='showContents4'>Boogie Tunes</h1>
+					<img src="images/tape4.jpg" alt="" width="100%">
+					</td>
+
+
+
+			</tr>
+
+			<tr class='toggleThis4'>
+				<th scope="col">Title</th>
+				<th scope="col">Artist</th>
+				<th scope="col">Preview</th>
+			</tr>
+
+			<?php
+
+			$query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+			$run = $mysqli->query($query1);
+			while ($row = $run->fetch_array()) {
+
+				$id = $row['id'];
+				$title = $row['title'];
+				$artist = $row['artist'];
+				$preview = $row['preview'];
+
+				echo '
+
+					<tr class="toggleThis4">
+
+						<td>' . $title . '</td>
+						<td>' . $artist . '</td>
+
+						';
+				if ($preview == 1) {
+						echo '  <td>
+
+							<audio controls>
+			<source src="audio/' . $title . '.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+
+							</td>';
+				}
+
+				echo '</tr>';
+			}
+			?>
+
+			<tr class="tablePanel" id='showContents5' align="center">
+
+				<td colspan="9" align="center" height=500>
+						<h1 id='showContents5'>90's Tunes</h1>
+					<img src="images/tape5.jpg" alt="" width="100%">
+					</td>
+
+
+
+			</tr>
+
+			<tr class='toggleThis5'>
+				<th scope="col">Title</th>
+				<th scope="col">Artist</th>
+				<th scope="col">Preview</th>
+			</tr>
+
+			<?php
+
+			$query1 = "SELECT * FROM Setlist WHERE category = 'wedding' ORDER BY preview DESC ; ";
+			$run = $mysqli->query($query1);
+			while ($row = $run->fetch_array()) {
+
+				$id = $row['id'];
+				$title = $row['title'];
+				$artist = $row['artist'];
+				$preview = $row['preview'];
+
+				echo '
+
+					<tr class="toggleThis5">
+
+						<td>' . $title . '</td>
+						<td>' . $artist . '</td>
+
+						';
+				if ($preview == 1) {
+						echo '  <td>
+
+							<audio controls>
+			<source src="audio/' . $title . '.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+
+							</td>';
+				}
+
+				echo '</tr>';
+			}
+			?>
+
+
+
+
+	</table>
 
 
 	</div>
+</div>
 
-	</div>
+
+</div>
 
 
 
@@ -315,7 +481,7 @@ Your browser does not support the audio element.
 		<a href="https://www.weddingsonline.ie/suppliers/2morrows-party"
 			target="_blank"><img title="weddingsonline.ie"
 			alt="weddingsonline.ie"
-			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
+			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png"  width=54 style="background-color:white;"/></a>
 
 
 

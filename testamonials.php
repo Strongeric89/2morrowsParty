@@ -104,17 +104,32 @@ footer {
 
 
 		<div class="jumbo">
-			<div class="cont" id="whiteBlock" width="30%" height="50%">
-				<h1 class="display-3">Sale Now On!</h1>
-				<p class="lead">Free DJ with every booking, when booked this month</p>
-				<p>
+			<div class="cont" id="whiteBlock" width="100%" height="50%">
+
+				<?php
+
+				$query1 = "SELECT * FROM offers WHERE id = (SELECT EXTRACT(MONTH FROM sysdate())) ; ";
+				$run = $mysqli->query($query1);
+				while ($row = $run->fetch_array()) {
+						$offername = $row['offername'];
+						$details = $row['offerdetails'];
+						$days = $row['numberofdaystorun'];
+						$toPrint = '<h1 class="display-3">'.$offername.'</h1>';
+						$toPrint .= '<p class="lead">'.$details.'</p>';
+
+						echo $toPrint;
+					}
+				 ?>
+
+
+				 <p>
 					<a class="btn btn-primary" href="contact.php" role="button">Enquire
 						Now</a>
 				</p>
 
+
 			</div>
 		</div>
-
 		<section class="row text-center placeholders" id="whiteBlock">
 			<div class="col-6 col-sm-3 placeholder">
 				<img src="images/sp17.jpg" width="200" height="200"
@@ -170,16 +185,16 @@ footer {
 
 
               <?php
-            
+
             // the following is to produce a testamonial on the index page
             $query1 = "SELECT customer, message, date FROM testamonials WHERE display = 1 ORDER BY date desc; ";
             $run = $mysqli->query($query1);
             while ($row = $run->fetch_array()) {
-                
+
                 $message = $row['message'];
                 $customer = $row['customer'];
                 $date = $row['date'];
-                
+
                 echo '
 
                       <div class="card" style="width: 100%;">
@@ -189,14 +204,14 @@ footer {
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Wedding Date: ' . $date . '</li>
                   <li class="list-group-item">' . $message . '</li>
-                              <li class="list-group-item">    <img src="images/5stars.png" alt="2mp" width="100%" ></li>
+                              <li class="list-group-item">    <img src="images/5stars.png" alt="2mp" width="100%" style="background-color:#f2f2f2;" ></li>
 
                 </ul>
               </div>
               <br>
                     ';
             }
-            
+
             ?>
 
 
@@ -249,7 +264,7 @@ footer {
 		<a href="https://www.weddingsonline.ie/suppliers/2morrows-party"
 			target="_blank"><img title="weddingsonline.ie"
 			alt="weddingsonline.ie"
-			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
+			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" width=54 style="background-color:white;" /></a>
 
 	</footer>
 

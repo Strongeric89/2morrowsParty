@@ -4,6 +4,7 @@
 }
 
 body{
+
     background-image: url(../images/music6.gif);
     background-position:bottom center;
     background-repeat: no-repeat;
@@ -24,10 +25,8 @@ width: 100%;
 height:50%;
 }
 
-
-
-
 .container {
+    background-attachment: fixed;
 
     width: 100% !important;
     max-width:100% !important;
@@ -55,6 +54,7 @@ background-color: #ffffff;
   font-weight:bold;
     color:#000000;
 }
+
 
 .card-header {
   background-color: gold;
@@ -118,7 +118,53 @@ background-color: #ffffff;
 
 }
 
+.card:hover{
+  color:#a88e01;
+
+}
+
 
 form{
   background-image: url(../images/stars.png);
+}
+
+.fa {
+  padding: 1%;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-youtube {
+  background: red;
+  color: white;
+}
+
+.fa-snapchat {
+  background: yellow;
+  color: black;
+}
+
+.tablePanel:hover{
+  none;
+}
+.tablePanel td{
+  padding:2%;
+
+}
+
+#aboutus2{
+  margin:30%;
+  padding:20%;
 }

@@ -103,14 +103,30 @@ footer {
 
 
 
-		<div class="jumbo">
-			<div class="cont" id="whiteBlock" width="30%" height="50%">
-				<h1 class="display-3">Sale Now On!</h1>
-				<p class="lead">Free DJ with every booking, when booked this month</p>
-				<p>
+    <div class="jumbo">
+			<div class="cont" id="whiteBlock" width="100%" height="50%">
+
+				<?php
+
+				$query1 = "SELECT * FROM offers WHERE id = (SELECT EXTRACT(MONTH FROM sysdate())) ; ";
+				$run = $mysqli->query($query1);
+				while ($row = $run->fetch_array()) {
+						$offername = $row['offername'];
+						$details = $row['offerdetails'];
+						$days = $row['numberofdaystorun'];
+						$toPrint = '<h1 class="display-3">'.$offername.'</h1>';
+						$toPrint .= '<p class="lead">'.$details.'</p>';
+
+						echo $toPrint;
+					}
+				 ?>
+
+
+				 <p>
 					<a class="btn btn-primary" href="contact.php" role="button">Enquire
 						Now</a>
 				</p>
+
 
 			</div>
 		</div>
@@ -185,7 +201,7 @@ footer {
 		<a href="https://www.weddingsonline.ie/suppliers/2morrows-party"
 			target="_blank"><img title="weddingsonline.ie"
 			alt="weddingsonline.ie"
-			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
+			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" width=54 style="background-color:white;" /></a>
 
 
 

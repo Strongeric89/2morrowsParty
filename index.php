@@ -72,13 +72,21 @@ footer {
 <body>
 
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
+	<script>
+
+	(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+
+
+
+	</script>
+
+
 
 
 	<div class="container">
@@ -86,6 +94,8 @@ footer {
 		<header class="header clearfix">
 
 			<img src="images/2mp.png" id="img">
+
+
 
 
 			<nav id="whiteBlock">
@@ -104,35 +114,52 @@ footer {
 			</nav>
 		</header>
 
+
+
 		<div class="jumbo">
 			<div class="cont" id="whiteBlock" width="100%" height="50%">
-				<h1 class="display-3">Sale Now On!</h1>
-				<p class="lead">Free DJ with every booking, when booked this month</p>
-				<p>
+
+				<?php
+
+				$query1 = "SELECT * FROM offers WHERE id = (SELECT EXTRACT(MONTH FROM sysdate())) ; ";
+				$run = $mysqli->query($query1);
+				while ($row = $run->fetch_array()) {
+						$offername = $row['offername'];
+						$details = $row['offerdetails'];
+						$days = $row['numberofdaystorun'];
+						$toPrint = '<h1 class="display-3">'.$offername.'</h1>';
+						$toPrint .= '<p class="lead">'.$details.'</p>';
+
+						echo $toPrint;
+					}
+				 ?>
+
+
+				 <p>
 					<a class="btn btn-primary" href="contact.php" role="button">Enquire
 						Now</a>
 				</p>
+
 
 			</div>
 		</div>
 
 		<div class="bio" id="whiteBlock">
 
-			<i class="fa fa-calendar-o" aria-hidden="true"></i>
 			<h1>Our Next Showcase</h1>
             <?php
             $query1 = "SELECT * FROM shows WHERE date > sysdate() ORDER BY date LIMIT 1 ; ";
             $run = $mysqli->query($query1);
             while ($row = $run->fetch_array()) {
-                
+
                 $location = $row['location'];
                 $date = $row['date'];
                 $time = $row['time'];
-                
+
                 echo '
 
-                <div class="card" style="width: 100%;">
-          <div class="card-header ">
+                <div class="card" style="width: 100%; ">
+          <div class="card-header">
             <i class="fa fa-calendar" aria-hidden="true"></i> Date: ' . $date . '
           </div>
           <ul class="list-group list-group-flush">
@@ -143,7 +170,7 @@ footer {
         <br>
               ';
             }
-            
+
             ?>
 
             <br>
@@ -251,7 +278,7 @@ footer {
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
-		
+
 		</main>
 
 
@@ -315,11 +342,11 @@ footer {
         $query1 = "SELECT * FROM shows WHERE date > sysdate() ORDER BY date ; ";
         $run = $mysqli->query($query1);
         while ($row = $run->fetch_array()) {
-            
+
             $location = $row['location'];
             $date = $row['date'];
             $time = $row['time'];
-            
+
             echo '
 
                 <div class="card" style="width: 100%;">
@@ -334,7 +361,7 @@ footer {
         <br>
               ';
         }
-        
+
         ?>
 
               </div>
@@ -353,14 +380,15 @@ footer {
 							<h5 class="card-title">
 								<i class="fa fa-envelope" aria-hidden="true"></i> Email:
 								2morrowsparty@gmail.com </i>
-						
+
 						</a>
 						</h5>
 						</a>
 						<hr>
 
 						<h5 class="card-title">
-							<i class="fa fa-phone" aria-hidden="true"> Phone: 085000000</i>
+							<i class="fa fa-phone" aria-hidden="true"> </i>
+							Phone: 085000000
 						</h5>
 						<hr>
 
@@ -400,15 +428,15 @@ footer {
 
       <?php
     // the following is to produce a testamonial on the index page
-    $query1 = "SELECT * FROM testamonials WHERE display = 1 ORDER BY RAND() limit 0,5; ";
-    
+    $query1 = "SELECT * FROM testamonials WHERE display = 1 ORDER BY RAND() limit 0,4; ";
+
     $run = $mysqli->query($query1);
     while ($row = $run->fetch_array()) {
-        
+
         $message = $row['message'];
         $customer = $row['customer'];
         $date = $row['date'];
-        
+
         echo '
 
               <div class="card" style="width: 100%;">
@@ -426,7 +454,7 @@ footer {
 
             ';
     }
-    
+
     ?>
        <br> <a href="testamonials.php">for more click here</a>
 
@@ -504,9 +532,13 @@ footer {
 			class="fa fa-youtube fa-6"></i></a> <a href="#"><i
 			class="fa fa-snapchat"></i></a> <a
 			href="https://www.weddingsonline.ie/suppliers/2morrows-party"
-			target="_blank"><img title="weddingsonline.ie"
+			target="_blank">
+
+			<img title="weddingsonline.ie"
 			alt="weddingsonline.ie"
-			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" /></a>
+			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" width=54 style="background-color:white;" /></a>
+
+
 
 
 
