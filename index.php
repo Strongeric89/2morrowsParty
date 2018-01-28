@@ -84,7 +84,12 @@ footer {
 
 
 
+
+
+
 	</script>
+
+	<a href="top"></a>
 
 
 
@@ -378,7 +383,8 @@ footer {
 					<div class="card-body">
 						<a href="mailto:2morrowsparty@gmail.com?Subject=Enquiry">
 							<h5 class="card-title">
-								<i class="fa fa-envelope" aria-hidden="true"></i> Email:
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<br>Email:
 								2morrowsparty@gmail.com </i>
 
 						</a>
@@ -494,7 +500,14 @@ footer {
 				</div>
 
 
+				<br><br>
+
+
+
+		<a class="btn btn-primary" onclick="location.href='#top'" href="superContent">To Top</a>
+
 			</div>
+
 
 
 		</div>
