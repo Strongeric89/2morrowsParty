@@ -243,7 +243,7 @@ footer {
 						<img src="images/2mp1.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
 							<h3>Weddings</h3>
-							<p>We Cater for all genres</p>
+							<p>We play all genres</p>
 						</div>
 					</div>
 
@@ -258,7 +258,7 @@ footer {
 					<div class="item">
 						<img src="images/2mp3.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
-							<h3>You Special Occassion</h3>
+							<h3>Your Special Occassion</h3>
 							<p>We will fill the dance floor Guaranteed!</p>
 						</div>
 					</div>
@@ -266,8 +266,8 @@ footer {
 					<div class="item">
 						<img src="images/2mp4.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
-							<h3>other stuff</h3>
-							<p>blah blah</p>
+							<h3>Wedding Packages Available</h3>
+							<p>contact us for more info</p>
 						</div>
 					</div>
 
