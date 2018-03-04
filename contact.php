@@ -202,12 +202,6 @@ footer {
 			class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-snapchat"></i></a>
 
 
-		<a href="https://www.weddingsonline.ie/suppliers/2morrows-party"
-			target="_blank"><img title="weddingsonline.ie"
-			alt="weddingsonline.ie"
-			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" width=54 style="background-color:white;" /></a>
-
-
 
 
 		<br>

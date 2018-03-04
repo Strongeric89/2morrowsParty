@@ -240,7 +240,7 @@ footer {
 				<div class="carousel-inner" role="listbox">
 
 					<div class="item active">
-						<img src="images/sp19.jpg" alt="2mp" width="460" height="345">
+						<img src="images/2mp1.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
 							<h3>Weddings</h3>
 							<p>We Cater for all genres</p>
@@ -248,7 +248,7 @@ footer {
 					</div>
 
 					<div class="item">
-						<img src="images/sp25.png" alt="2mp" width="460" height="345">
+						<img src="images/2mp2.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
 							<h3>Parties</h3>
 							<p>We supply a full rig, dj, lighting etc..</p>
@@ -256,7 +256,7 @@ footer {
 					</div>
 
 					<div class="item">
-						<img src="images/sp2.png" alt="2mp" width="460" height="345">
+						<img src="images/2mp3.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
 							<h3>You Special Occassion</h3>
 							<p>We will fill the dance floor Guaranteed!</p>
@@ -264,7 +264,7 @@ footer {
 					</div>
 
 					<div class="item">
-						<img src="images/sp20.jpg" alt="2mp" width="460" height="345">
+						<img src="images/2mp4.jpg" alt="2mp" width="460" height="345">
 						<div class="carousel-caption">
 							<h3>other stuff</h3>
 							<p>blah blah</p>
@@ -328,10 +328,8 @@ footer {
 
 
 				<h4>Audio Samples</h4>
-				<iframe width="100%" height="450" scrolling="no" frameborder="no"
-					src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/45984319&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true"></iframe>
 
-
+<iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/463757094&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
 			</div>
 
@@ -474,20 +472,15 @@ footer {
 
 				<div>
 					<p>Check out our Promo Video. You will not be disapointed</p>
-					<iframe width="98%" height="500px"
-						src="https://www.youtube.com/embed/tvARmKG-S_4?start=6"
-						frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					<iframe width="98%" height="500px" src="https://www.youtube.com/embed/WGOtrTdnOkY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 				</div>
 
 				<div>
-					<h4>another cool video</h4>
-					<p>college gigs and shit</p>
-					<iframe width="98%" height="500px"
-						src="https://www.youtube.com/embed/IThGXN1k9ww?start=10"
-						frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+					<p>Fun band wit fun tunes</p>
+						<iframe width="98%" height="500px" src="https://www.youtube.com/embed/WVj8ZQRB2RE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				</div>
+
 
 				<div>
 					<h4>some other mad video</h4>
@@ -546,13 +539,6 @@ footer {
 			class="fa fa-snapchat"></i></a> <a
 			href="https://www.weddingsonline.ie/suppliers/2morrows-party"
 			target="_blank">
-
-			<img title="weddingsonline.ie"
-			alt="weddingsonline.ie"
-			src="https://www.weddingsonline.ie/contentimages/115/2013081511193058.png" width=54 style="background-color:white;" /></a>
-
-
-
 
 
 	</footer>
